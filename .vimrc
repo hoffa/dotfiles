@@ -13,6 +13,8 @@ set listchars=trail:·,tab:»·,eol:¬,nbsp:% " Characters to display when using
 set scroll=4 " Lines to scroll with <C-U> and <C-D>
 
 filetype indent on " Use filetype-specific indenting
+set autoindent " Indent when starting new line
+set smartindent " Be a bit smarter about it
 set expandtab " Use spaces instead of tabs
 set smarttab " Be smart about what tab to insert
 set shiftwidth=4 " Spaces when reindenting
@@ -29,7 +31,7 @@ set showcmd " Show last command in bottom bar
 set wildmenu " Enable better command line completion
 
 " Useful statusline and some nice colors
-set statusline=\ %n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c·%l/%L\ 0x%02B\ %P\ 
+set statusline=\ %n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l/%L\ 0x%02B\ %P\ 
 hi StatusLine ctermbg=8 ctermfg=2
 au InsertEnter * hi StatusLine ctermbg=8 ctermfg=1
 au InsertLeave * hi StatusLine ctermbg=8 ctermfg=2
