@@ -1,3 +1,7 @@
+" Christoffer Rehn's .vimrc
+" No plugins or other tacky stuff
+" Modified: 2016/11/25
+
 set nocompatible " Better safe than sorry
 set encoding=utf-8 " Idem 
 let mapleader=" " " Set <Leader>
