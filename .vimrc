@@ -1,6 +1,6 @@
 " Christoffer Rehn's .vimrc
 " No plugins or other tacky stuff
-" Modified: 2016/11/25
+" Modified: 2016/11/26
 
 set nocompatible " Better safe than sorry
 set encoding=utf-8 " Idem 
@@ -36,9 +36,9 @@ set wildmenu " Enable better command line completion
 
 " Useful statusline and some nice colors
 set statusline=\ %n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l/%L\ 0x%02B\ %P\ 
-hi StatusLine ctermbg=8 ctermfg=2
+hi StatusLine ctermbg=8 ctermfg=4
 au InsertEnter * hi StatusLine ctermbg=8 ctermfg=1
-au InsertLeave * hi StatusLine ctermbg=8 ctermfg=2
+au InsertLeave * hi StatusLine ctermbg=8 ctermfg=4
 
 " Scroll with arrow keys
 noremap <Up> <C-U>
