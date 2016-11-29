@@ -22,6 +22,13 @@ f()  { find . -iname "*$1*"; }
 g()  { grep -RHn --color=auto $2 "$1" *; }
 gi() { g $1 -i; }
 mc() { mkdir -p $1; cd $1; }
+ip() {
+    echo "External: `dig +short myip.opendns.com @resolver1.opendns.com 2> /dev/null || echo None`"
+    for i in `ifconfig -l | xargs -n1 | sort`
+    do
+        echo "$i: `ipconfig getifaddr $i || echo None`"
+    done
+}
 
 alias ..='cd ..'
 alias ...='cd ../..'
