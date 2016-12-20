@@ -37,6 +37,7 @@ alias .....='cd ../../../..'
 
 alias i='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias l='ls -lahGF'
+alias note='vim ~/Library/Mobile\ Documents/com~apple~CloudDocs/Notes.txt'
 
 alias ga='git add'
 alias gb='git branch'
