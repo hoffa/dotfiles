@@ -13,7 +13,7 @@ export CLICOLOR=1
 if [[ $UID == 0 ]]; then
     export PS1="$RED\u \h \w \\$ $OFF"
 else
-    export PS1="$CYAN\u $BLUE\h $RED\$(git_branch)$YELLOW\w $GREEN\\$ $OFF"
+    export PS1="$CYAN\u $BLUE\h$GREEN in $RED\$(git_branch)$YELLOW\w$YELLOW\n ➥  $OFF"
 fi
 
 HISTFILESIZE=5000
