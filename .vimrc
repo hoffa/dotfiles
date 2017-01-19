@@ -18,7 +18,7 @@ set scroll=4 " Lines to scroll with <C-U> and <C-D>
 
 filetype indent on " Use filetype-specific indenting
 set autoindent " Indent when starting new line
-set smartindent " Be a bit smarter about it
+set nosmartindent " Not that smart
 set expandtab " Use spaces instead of tabs
 set shiftwidth=4 " Spaces when reindenting
 set softtabstop=4 " Spaces when hitting tab
