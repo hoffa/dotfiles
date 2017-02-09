@@ -16,11 +16,12 @@ else
     export PS1="$CYAN\u $GREEN\h $RED\$(git_branch)$YELLOW\w\n ➥  $OFF"
 fi
 
-# History stuff
 HISTCONTROL=ignoredups:erasedups
 HISTSIZE=10000
 HISTFILESIZE=10000
+
 shopt -s histappend
+shopt -s checkwinsize
 
 f()  { find . -iname "*$1*"; }
 g()  { grep -RHn --color=auto $2 "$1" *; }
