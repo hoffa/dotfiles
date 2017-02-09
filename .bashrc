@@ -13,11 +13,14 @@ export CLICOLOR=1
 if [[ $UID == 0 ]]; then
     export PS1="$RED\u \h \w \\$ $OFF"
 else
-    export PS1="$CYAN\u $BLUE\h$GREEN in $RED\$(git_branch)$YELLOW\w$YELLOW\n ➥  $OFF"
-    export PS1="$GREEN\u $CYAN\h $RED\$(git_branch)$YELLOW\w$YELLOW\n ➥  $OFF"
+    export PS1="$CYAN\u $GREEN\h $RED\$(git_branch)$YELLOW\w\n ➥  $OFF"
 fi
 
-HISTFILESIZE=5000
+# History stuff
+HISTCONTROL=ignoredups:erasedups
+HISTSIZE=10000
+HISTFILESIZE=10000
+shopt -s histappend
 
 f()  { find . -iname "*$1*"; }
 g()  { grep -RHn --color=auto $2 "$1" *; }
@@ -41,6 +44,7 @@ alias i='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias l='ls -lahGF'
 alias note='vim ~/Library/Mobile\ Documents/com~apple~CloudDocs/Notes.txt'
 
+# Git stuff
 alias ga='git add'
 alias gb='git branch'
 alias gba='git branch -a'
