@@ -10,11 +10,7 @@ git_branch() {
 }
 
 export CLICOLOR=1
-if [[ $UID == 0 ]]; then
-    export PS1="$RED\u \h \w \\$ $OFF"
-else
-    export PS1="$CYAN\u $GREEN\h $RED\$(git_branch)$YELLOW\w\n ➥  $OFF"
-fi
+export PS1="$CYAN\u $GREEN\h $RED\$(git_branch)$YELLOW\w\n$RED\\$ $OFF"
 
 HISTCONTROL=ignoredups:erasedups
 HISTSIZE=10000
