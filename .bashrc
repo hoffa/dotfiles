@@ -38,6 +38,7 @@ alias .....='cd ../../../..'
 
 alias a='ack'
 alias i='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
+alias ls='ls --color=auto'
 alias l='ls -lahGF'
 alias note='vim ~/Library/Mobile\ Documents/com~apple~CloudDocs/Notes.txt'
 
