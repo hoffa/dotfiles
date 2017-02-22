@@ -45,6 +45,7 @@ alias note='vim ~/Library/Mobile\ Documents/com~apple~CloudDocs/Notes.txt'
 # Git stuff
 alias ga='git add'
 alias gcm='git commit -m'
+alias gcam='git commit -am'
 alias gd='git diff'
 alias gl='git log'
 alias glg='git log --graph --oneline'
