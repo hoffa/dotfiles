@@ -19,7 +19,7 @@ HISTFILESIZE=10000
 shopt -s histappend
 shopt -s checkwinsize
 
-d() { diff -u "$1" "$2" | less -RF; }
+d() { colordiff -u "$1" "$2" | less -RF; }
 f() { find . -iname "*$1*"; }
 g() { grep -RHn --color=auto $2 "$1" *; }
 ip() {
