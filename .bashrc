@@ -19,10 +19,9 @@ HISTFILESIZE=10000
 shopt -s histappend
 shopt -s checkwinsize
 
-f()  { find . -iname "*$1*"; }
-g()  { grep -RHn --color=auto $2 "$1" *; }
-gi() { g $1 -i; }
-mc() { mkdir -p $1; cd $1; }
+d() { diff -u "$1" "$2" | less -RF }
+f() { find . -iname "*$1*"; }
+g() { grep -RHn --color=auto $2 "$1" *; }
 ip() {
     for i in `ifconfig -l | xargs -n1 | sort`
     do
