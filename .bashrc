@@ -29,6 +29,7 @@ ip() {
     done
     echo "External: `dig +short myip.opendns.com @resolver1.opendns.com 2> /dev/null || echo None`"
 }
+google() { open "http://www.google.com/search?q=$*"; }
 
 alias ..='cd ..'
 alias ...='cd ../..'
