@@ -29,7 +29,7 @@ ip() {
     done
     echo "External: `dig +short myip.opendns.com @resolver1.opendns.com 2> /dev/null || echo None`"
 }
-google() { open "http://www.google.com/search?q=$*"; }
+goog() { open "http://www.google.com/search?q=$*"; }
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -40,6 +40,8 @@ alias a='ack'
 alias i='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias l='ls -lahGF'
 alias note='vim ~/Library/Mobile\ Documents/com~apple~CloudDocs/Notes.txt'
+alias ts='date +%s'
+alias ts2date='date -r'
 
 alias ga='git add'
 alias gcm='git commit -m'
