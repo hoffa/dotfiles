@@ -41,7 +41,7 @@ alias i='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias l='ls -lahGF'
 alias note='vim ~/Library/Mobile\ Documents/com~apple~CloudDocs/Notes.txt'
 alias ts='date +%s'
-alias ts2date='date -r'
+alias ts2date='date -ur'
 
 alias ga='git add'
 alias gcm='git commit -m'
