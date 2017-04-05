@@ -30,6 +30,7 @@ ip() {
     echo "External: `dig +short myip.opendns.com @resolver1.opendns.com 2> /dev/null || echo None`"
 }
 goog() { open "http://www.google.com/search?q=$*"; }
+ts2date() { date -ur $1 +"%Y-%m-%d %H:%M:%S UTC"; }
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -41,7 +42,6 @@ alias i='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias l='ls -lahGF'
 alias note='vim ~/Library/Mobile\ Documents/com~apple~CloudDocs/Notes.txt'
 alias ts='date +%s'
-alias ts2date='date -ur'
 
 alias ga='git add'
 alias gcm='git commit -m'
