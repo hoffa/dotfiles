@@ -31,6 +31,16 @@ ip() {
 }
 goog() { open "http://www.google.com/search?q=$*"; }
 ts2date() { date -ur $1 +"%Y-%m-%d %H:%M:%S UTC"; }
+run() {
+    count=$1
+    sleep_s=$2
+    shift
+    shift
+    for i in `seq $count`; do
+        $@
+        sleep $sleep_s
+    done
+}
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -56,3 +66,5 @@ alias gpuom='git push -u origin master'
 alias grm='git rm'
 alias gs='git status'
 alias gsh='git show'
+
+eval $(thefuck --alias)
