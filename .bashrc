@@ -66,5 +66,3 @@ alias gpuom='git push -u origin master'
 alias grm='git rm'
 alias gs='git status'
 alias gsh='git show'
-
-eval $(thefuck --alias)
