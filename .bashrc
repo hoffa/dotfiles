@@ -31,16 +31,6 @@ ip() {
 }
 goog() { open "http://www.google.com/search?q=$*"; }
 ts2date() { date -ur $1 +"%Y-%m-%d %H:%M:%S UTC"; }
-run() {
-    count=$1
-    sleep_s=$2
-    shift
-    shift
-    for i in `seq $count`; do
-        $@
-        sleep $sleep_s
-    done
-}
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -50,6 +40,7 @@ alias .....='cd ../../../..'
 alias a='ack'
 alias i='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias l='ls -lahGF'
+alias v='vim'
 alias note='vim ~/Library/Mobile\ Documents/com~apple~CloudDocs/Notes.txt'
 alias ts='date +%s'
 
