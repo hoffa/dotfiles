@@ -1,14 +1,13 @@
 " Christoffer Rehn's .vimrc
 " No plugins or other tacky stuff
-" Modified: 2016/11/26
 
-set nocompatible " Better safe than sorry
-set encoding=utf-8 " Idem 
-let mapleader=" " " Set <Leader>
+set nocompatible
+set encoding=utf-8
+let mapleader=" "
 
-syntax on " Enable syntax highlighting
-colorscheme default " Set color scheme
-set background=dark " Assume dark background
+syntax on
+set background=dark
+colorscheme default
 
 set title " Change terminal title to filename
 set number " Show line numbers
@@ -18,8 +17,9 @@ set scroll=4 " Lines to scroll with <C-U> and <C-D>
 
 filetype indent on " Use filetype-specific indenting
 set autoindent " Indent when starting new line
-set nosmartindent " Not that smart
+set smartindent " Be a bit smarter about it
 set expandtab " Use spaces instead of tabs
+set smarttab " Be smart about what tab to insert
 set shiftwidth=4 " Spaces when reindenting
 set softtabstop=4 " Spaces when hitting tab
 set tabstop=4 " Visual spaces per tab
@@ -35,9 +35,9 @@ set wildmenu " Enable better command line completion
 
 " Useful statusline and some nice colors
 set statusline=\ %n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l/%L\ 0x%02B\ %P\ 
-hi StatusLine ctermbg=8 ctermfg=11
-au InsertEnter * hi StatusLine ctermbg=8 ctermfg=1
-au InsertLeave * hi StatusLine ctermbg=8 ctermfg=11
+hi StatusLine ctermbg=16 ctermfg=3
+au InsertEnter * hi StatusLine ctermbg=15 ctermfg=1
+au InsertLeave * hi StatusLine ctermbg=8 ctermfg=4
 
 " Scroll with arrow keys
 noremap <Up> <C-U>

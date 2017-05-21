@@ -6,11 +6,11 @@ RED='\[\e[0;31m\]'
 YELLOW='\[\e[0;33m\]'
 
 git_branch() {
-    git rev-parse --abbrev-ref HEAD 2> /dev/null | sed -e 's/\(.*\)/\1 /'
+    git rev-parse --abbrev-ref HEAD 2> /dev/null | awk '{print $1" "}'
 }
 
 export CLICOLOR=1
-export PS1="$CYAN\u $GREEN\h $RED\$(git_branch)$YELLOW\w\n$RED\\$ $OFF"
+export PS1="$CYAN\u $BLUE\h $RED\$(git_branch)$GREEN\w\n$RED\\$ $OFF"
 
 HISTCONTROL=ignoredups:erasedups
 HISTSIZE=10000
@@ -22,6 +22,8 @@ shopt -s checkwinsize
 d() { colordiff -ur "$1" "$2"; }
 f() { find . -iname "*$1*"; }
 g() { grep -RHn --color=auto $2 "$1" *; }
+google() { open "http://www.google.com/search?q=$*"; }
+ts2date() { date -ur $1 +"%Y-%m-%d %H:%M:%S UTC"; }
 ip() {
     for i in `ifconfig -l | xargs -n1 | sort`
     do
@@ -29,8 +31,6 @@ ip() {
     done
     echo "External: `dig +short myip.opendns.com @resolver1.opendns.com 2> /dev/null || echo None`"
 }
-goog() { open "http://www.google.com/search?q=$*"; }
-ts2date() { date -ur $1 +"%Y-%m-%d %H:%M:%S UTC"; }
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -40,7 +40,6 @@ alias .....='cd ../../../..'
 alias a='ack'
 alias i='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias l='ls -lahGF'
-alias v='vim'
 alias note='vim ~/Library/Mobile\ Documents/com~apple~CloudDocs/Notes.txt'
 alias ts='date +%s'
 
