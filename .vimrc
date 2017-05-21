@@ -37,7 +37,7 @@ set wildmenu " Enable better command line completion
 set statusline=\ %n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l/%L\ 0x%02B\ %P\ 
 hi StatusLine ctermbg=16 ctermfg=3
 au InsertEnter * hi StatusLine ctermbg=15 ctermfg=1
-au InsertLeave * hi StatusLine ctermbg=8 ctermfg=4
+au InsertLeave * hi StatusLine ctermbg=16 ctermfg=3
 
 " Scroll with arrow keys
 noremap <Up> <C-U>
