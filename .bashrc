@@ -1,29 +1,18 @@
-BLUE='\[\e[0;34m\]'
-CYAN='\[\e[0;36m\]'
-GREEN='\[\e[0;32m\]'
-OFF='\[\e[0m\]'
-RED='\[\e[0;31m\]'
-YELLOW='\[\e[0;33m\]'
-
 git_branch() {
     git rev-parse --abbrev-ref HEAD 2> /dev/null | awk '{print $1" "}'
 }
-
-export CLICOLOR=1
-export PS1="$CYAN\u $BLUE\h $RED\$(git_branch)$GREEN\w\n$RED\\$ $OFF"
-
-HISTCONTROL=ignoredups:erasedups
-HISTSIZE=10000
-HISTFILESIZE=10000
-
-shopt -s histappend
-shopt -s checkwinsize
-
-d() { colordiff -ur "$1" "$2"; }
-f() { find . -iname "*$1*"; }
-g() { grep -RHn --color=auto $2 "$1" *; }
-google() { open "http://www.google.com/search?q=$*"; }
-ts2date() { date -ur $1 +"%Y-%m-%d %H:%M:%S UTC"; }
+d() {
+    colordiff -ur "$1" "$2"
+}
+f() {
+    find . -iname "*$1*"
+}
+g() {
+    grep -RHn --color=auto $2 "$1" *
+}
+ts2date() {
+    date -ur $1 +"%Y-%m-%d %H:%M:%S UTC"
+}
 ip() {
     for i in `ifconfig -l | xargs -n1 | sort`
     do
@@ -56,3 +45,19 @@ alias gpuom='git push -u origin master'
 alias grm='git rm'
 alias gs='git status'
 alias gsh='git show'
+
+YELLOW='\[\e[0;33m\]'
+GREEN='\[\e[0;32m\]'
+BLUE='\[\e[0;34m\]'
+RED='\[\e[0;31m\]'
+OFF='\[\e[0m\]'
+
+HISTCONTROL=ignoredups:erasedups
+HISTSIZE=10000
+HISTFILESIZE=10000
+
+shopt -s histappend
+shopt -s checkwinsize
+
+export CLICOLOR=1
+export PS1="$BLUE\u $YELLOW\h $RED\$(git_branch)$GREEN\w\n$RED\\$ $OFF"
