@@ -7,7 +7,7 @@ let mapleader=" "
 
 syntax on
 set background=dark
-colorscheme default
+colorscheme peachpuff
 
 set title " Change terminal title to filename
 set number " Show line numbers
