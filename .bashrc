@@ -27,9 +27,9 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 alias a='ack'
-alias i='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
+alias i='cd ~/Cloud'
 alias l='ls -lahGF'
-alias note='vim ~/Library/Mobile\ Documents/com~apple~CloudDocs/Notes.txt'
+alias note='vim ~/Cloud/Notes.txt'
 alias ts='date +%s'
 
 alias ga='git add'
