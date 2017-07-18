@@ -46,11 +46,11 @@ alias grm='git rm'
 alias gs='git status'
 alias gsh='git show'
 
-YELLOW='\[\e[0;33m\]'
-GREEN='\[\e[0;32m\]'
-BLUE='\[\e[0;34m\]'
-RED='\[\e[0;31m\]'
-OFF='\[\e[0m\]'
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+BLUE=$(tput setaf 4)
+OFF=$(tput sgr0)
 
 HISTCONTROL=ignoredups:erasedups
 HISTSIZE=10000
@@ -61,3 +61,5 @@ shopt -s checkwinsize
 
 export CLICOLOR=1
 export PS1="$BLUE\u $YELLOW\h $RED\$(git_branch)$GREEN\w\n$RED\\$ $OFF"
+
+fortune | cowsay -f small
