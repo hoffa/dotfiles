@@ -62,4 +62,4 @@ shopt -s checkwinsize
 export CLICOLOR=1
 export PS1="$BLUE\u $YELLOW\h $RED\$(git_branch)$GREEN\w\n$RED\\$ $OFF"
 
-fortune -s | cowsay -y -f small | lolcat -t
+fortune -s | cowsay | lolcat -t
