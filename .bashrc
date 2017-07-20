@@ -46,11 +46,11 @@ alias grm='git rm'
 alias gs='git status'
 alias gsh='git show'
 
-RED=$(tput setaf 1)
-GREEN=$(tput setaf 2)
-YELLOW=$(tput setaf 3)
-BLUE=$(tput setaf 4)
-OFF=$(tput sgr0)
+YELLOW='\[\e[0;33m\]'
+GREEN='\[\e[0;32m\]'
+BLUE='\[\e[0;34m\]'
+RED='\[\e[0;31m\]'
+OFF='\[\e[0m\]'
 
 HISTCONTROL=ignoredups:erasedups
 HISTSIZE=10000
