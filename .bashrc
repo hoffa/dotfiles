@@ -28,7 +28,7 @@ alias .....='cd ../../../..'
 
 alias a='ack'
 alias i='cd ~/Cloud'
-alias l='ls -lahGF'
+alias l='exa -la'
 alias note='vim ~/Cloud/Notes.txt'
 alias ts='date +%s'
 
