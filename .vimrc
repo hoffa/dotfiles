@@ -6,8 +6,7 @@ set encoding=utf-8
 let mapleader=" "
 
 syntax on
-set background=dark
-colorscheme peachpuff
+colorscheme pencil
 
 set title " Change terminal title to filename
 set number " Show line numbers
@@ -33,11 +32,15 @@ set history=1000 " Command history size
 set showcmd " Show last command in bottom bar
 set wildmenu " Enable better command line completion
 
-" Useful statusline and some nice colors
+" Useful statusline
 set statusline=\ %n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l/%L\ 0x%02B\ %P\ 
-hi StatusLine ctermbg=7 ctermfg=4
-au InsertEnter * hi StatusLine ctermbg=7 ctermfg=1
-au InsertLeave * hi StatusLine ctermbg=7 ctermfg=4
+
+" Nice colors
+hi Normal ctermbg=none
+hi LineNr ctermbg=none
+hi StatusLine cterm=none ctermfg=2
+au InsertEnter * hi StatusLine ctermfg=1
+au InsertLeave * hi StatusLine ctermfg=2
 
 " Scroll with arrow keys
 noremap <Up> <C-U>
