@@ -61,6 +61,6 @@ shopt -s histappend
 shopt -s checkwinsize
 
 export CLICOLOR=1
-export PS1="$RED\u $YELLOW\h $BLUE\$(git_branch)$RED\w\n$RED\\$ $OFF"
+export PS1="$RED\u $BLUE\h $YELLOW\$(git_branch)$RED\w\n$RED\\$ $OFF"
 
-fortune -s | cowsay -y | lolcat -t
+tput setaf 1; fortune -s | cowsay -y

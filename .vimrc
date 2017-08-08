@@ -1,4 +1,4 @@
-" Christoffer Rehn's .vimrc
+" Chris Rehn's .vimrc
 " No plugins or other tacky stuff
 
 set nocompatible
@@ -6,7 +6,8 @@ set encoding=utf-8
 let mapleader=" "
 
 syntax on
-colorscheme turtles
+colorscheme onedark
+set background=dark
 
 set title " Change terminal title to filename
 set number " Show line numbers
