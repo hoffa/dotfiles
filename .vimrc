@@ -6,7 +6,7 @@ set encoding=utf-8
 let mapleader=" "
 
 syntax on
-colorscheme pencil
+colorscheme turtles
 
 set title " Change terminal title to filename
 set number " Show line numbers
@@ -38,7 +38,7 @@ set statusline=\ %n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l/%
 " Nice colors
 hi Normal ctermbg=none
 hi LineNr ctermbg=none
-hi StatusLine cterm=none ctermfg=2
+hi StatusLine cterm=none ctermfg=2 ctermbg=none
 au InsertEnter * hi StatusLine ctermfg=1
 au InsertLeave * hi StatusLine ctermfg=2
 

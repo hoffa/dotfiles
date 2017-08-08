@@ -48,6 +48,7 @@ alias gsh='git show'
 
 YELLOW='\[\e[0;33m\]'
 GREEN='\[\e[0;32m\]'
+GRAY='\[\e[0;90m\]'
 BLUE='\[\e[0;34m\]'
 RED='\[\e[0;31m\]'
 OFF='\[\e[0m\]'
@@ -60,6 +61,6 @@ shopt -s histappend
 shopt -s checkwinsize
 
 export CLICOLOR=1
-export PS1="$BLUE\u $YELLOW\h $RED\$(git_branch)$GREEN\w\n$RED\\$ $OFF"
+export PS1="$RED\u $YELLOW\h $BLUE\$(git_branch)$RED\w\n$RED\\$ $OFF"
 
 fortune -s | cowsay -y | lolcat -t
