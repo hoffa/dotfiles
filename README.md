@@ -2,6 +2,7 @@
 
 Trying to keep it simple and plugin-free.
 
-![](http://i.imgur.com/mUBfXLC.png)
+iTerm/Vim theme: https://github.com/joshdick/onedark.vim
+Font: Roboto Mono 14pt
 
-iTerm/vim theme: https://github.com/joshdick/onedark.vim
+![](http://i.imgur.com/mUBfXLC.png)
