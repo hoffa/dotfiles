@@ -14,6 +14,7 @@ set number " Show line numbers
 set hidden " Hide buffers instead of closing them
 set listchars=trail:·,tab:»·,eol:¬,nbsp:% " Characters to display when using :list
 set scroll=4 " Lines to scroll with <C-U> and <C-D>
+set backspace=indent,eol,start
 
 filetype indent on " Use filetype-specific indenting
 set autoindent " Indent when starting new line
