@@ -44,6 +44,8 @@ hi StatusLine cterm=none ctermfg=2 ctermbg=none
 au InsertEnter * hi StatusLine ctermfg=1
 au InsertLeave * hi StatusLine ctermfg=2
 
+set pastetoggle=<F3>
+
 " Scroll with arrow keys
 noremap <Up> <C-U>
 noremap <Down> <C-D>
