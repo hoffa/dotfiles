@@ -6,7 +6,7 @@ set encoding=utf-8
 let mapleader=" "
 
 syntax on
-colorscheme onedark
+colorscheme pablo
 set background=dark
 
 set title " Change terminal title to filename
@@ -34,17 +34,19 @@ set history=1000 " Command history size
 set showcmd " Show last command in bottom bar
 set wildmenu " Enable better command line completion
 
+set pastetoggle=<F3
+
 " Useful statusline
 set statusline=\ %n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l/%L\ 0x%02B\ %P\ 
 
 " Nice colors
 hi Normal ctermbg=none
-hi LineNr ctermbg=none
-hi StatusLine cterm=none ctermfg=2 ctermbg=none
+hi NonText ctermfg=8 ctermbg=none
+hi LineNr ctermfg=8 ctermbg=none
+hi Comment ctermfg=8 ctermbg=none
+hi StatusLine cterm=none ctermfg=3 ctermbg=none
 au InsertEnter * hi StatusLine ctermfg=1
-au InsertLeave * hi StatusLine ctermfg=2
-
-set pastetoggle=<F3>
+au InsertLeave * hi StatusLine ctermfg=3
 
 " Scroll with arrow keys
 noremap <Up> <C-U>
