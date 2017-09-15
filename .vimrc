@@ -35,7 +35,7 @@ set showcmd " Show last command in bottom bar
 set wildmenu " Enable better command line completion
 
 " Useful statusline
-set statusline=\ %n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l/%L\ 0x%02B\ %P\ 
+set statusline=%n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l/%L\ 0x%02B\ %P
 
 " Nice colors
 hi Normal ctermbg=none
