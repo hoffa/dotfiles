@@ -34,8 +34,6 @@ set history=1000 " Command history size
 set showcmd " Show last command in bottom bar
 set wildmenu " Enable better command line completion
 
-set pastetoggle=<F3
-
 " Useful statusline
 set statusline=\ %n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l/%L\ 0x%02B\ %P\ 
 
@@ -44,9 +42,9 @@ hi Normal ctermbg=none
 hi NonText ctermfg=8 ctermbg=none
 hi LineNr ctermfg=8 ctermbg=none
 hi Comment ctermfg=8 ctermbg=none
-hi StatusLine cterm=none ctermfg=3 ctermbg=none
-au InsertEnter * hi StatusLine ctermfg=1
-au InsertLeave * hi StatusLine ctermfg=3
+hi StatusLine cterm=none ctermfg=0 ctermbg=2
+au InsertEnter * hi StatusLine ctermbg=1
+au InsertLeave * hi StatusLine ctermbg=2
 
 " Scroll with arrow keys
 noremap <Up> <C-U>
