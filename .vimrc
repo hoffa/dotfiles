@@ -42,9 +42,9 @@ hi Normal ctermbg=none
 hi NonText ctermfg=8 ctermbg=none
 hi LineNr ctermfg=8 ctermbg=none
 hi Comment ctermfg=8 ctermbg=none
-hi StatusLine cterm=none ctermfg=0 ctermbg=2
-au InsertEnter * hi StatusLine ctermbg=1
-au InsertLeave * hi StatusLine ctermbg=2
+hi StatusLine cterm=none ctermfg=none ctermbg=8
+au InsertEnter * hi StatusLine ctermbg=6
+au InsertLeave * hi StatusLine ctermbg=8
 
 " Scroll with arrow keys
 noremap <Up> <C-U>
@@ -68,4 +68,3 @@ let g:netrw_liststyle=3 " Show as tree
 let g:netrw_banner=0 " Hide extra information at the top
 let g:netrw_browse_split=4 " Open in previous window
 let g:netrw_altv=1 " Split to the right
-let g:netrw_sort_sequence="[\/]$,*" " Sort directories first
