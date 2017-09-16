@@ -1,24 +1,14 @@
 git_branch() {
-    git rev-parse --abbrev-ref HEAD 2> /dev/null | awk '{print $1" "}'
-}
-d() {
-    colordiff -ur "$1" "$2"
+    git rev-parse --abbrev-ref HEAD 2> /dev/null
 }
 f() {
     find . -iname "*$1*"
 }
 g() {
-    grep -RHn --color=auto $2 "$1" *
+    grep -RHn --color=auto --exclude-dir=.git "$1" .
 }
 ts2date() {
     date -ur $1 +"%Y-%m-%d %H:%M:%S UTC"
-}
-ip() {
-    for i in `ifconfig -l | xargs -n1 | sort`
-    do
-        echo "$i: `ipconfig getifaddr $i || echo None`"
-    done
-    echo "External: `dig +short myip.opendns.com @resolver1.opendns.com 2> /dev/null || echo None`"
 }
 
 alias ..='cd ..'
@@ -28,7 +18,8 @@ alias .....='cd ../../../..'
 
 alias a='ack'
 alias i='cd ~/Cloud'
-alias l='exa -la'
+alias d='diff -u'
+alias l='ls -lAhFG'
 alias note='vim ~/Cloud/Notes.txt'
 alias ts='date +%s'
 
@@ -47,21 +38,16 @@ alias grm='git rm'
 alias gs='git status'
 alias gsh='git show'
 
-YELLOW='\[\e[0;33m\]'
-GREEN='\[\e[0;32m\]'
-GRAY='\[\e[0;90m\]'
-BLUE='\[\e[0;36m\]'
-RED='\[\e[0;31m\]'
-OFF='\[\e[0m\]'
-
 HISTCONTROL=ignoredups:erasedups
-HISTSIZE=10000
-HISTFILESIZE=10000
-
+HISTSIZE=100000
+HISTFILESIZE=100000
 shopt -s histappend
 shopt -s checkwinsize
 
-export CLICOLOR=1
-export PS1="$RED\u $GREEN\h $YELLOW\$(git_branch)$BLUE\w\n$RED\\$ $OFF"
+RED=$(tput setaf 1)
+YELLOW=$(tput setaf 3)
+BLUE=$(tput setaf 4)
+OFF=$(tput sgr0)
+PS1="$BLUE\u$OFF at $BLUE\h$OFF in $RED\w $YELLOW\$(git_branch)$OFF\n\\$ "
 
-tput setaf 1; fortune -s | cowsay -y
+fortune -s | cowsay

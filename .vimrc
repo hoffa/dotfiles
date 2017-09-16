@@ -6,8 +6,7 @@ set encoding=utf-8
 let mapleader=" "
 
 syntax on
-colorscheme pablo
-set background=dark
+colorscheme default
 
 set title " Change terminal title to filename
 set number " Show line numbers
@@ -38,13 +37,9 @@ set wildmenu " Enable better command line completion
 set statusline=%n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l/%L\ 0x%02B\ %P
 
 " Nice colors
-hi Normal ctermbg=none
 hi NonText ctermfg=8 ctermbg=none
 hi LineNr ctermfg=8 ctermbg=none
 hi Comment ctermfg=8 ctermbg=none
-hi StatusLine cterm=none ctermfg=none ctermbg=8
-au InsertEnter * hi StatusLine ctermbg=6
-au InsertLeave * hi StatusLine ctermbg=8
 
 " Scroll with arrow keys
 noremap <Up> <C-U>
