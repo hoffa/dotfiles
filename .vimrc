@@ -6,7 +6,7 @@ set encoding=utf-8
 let mapleader=" "
 
 syntax on
-colorscheme pablo
+colorscheme default
 set background=light
 
 set title " Change terminal title to filename
@@ -42,6 +42,8 @@ hi Normal ctermbg=none
 hi NonText ctermfg=8
 hi LineNr ctermfg=8
 hi Comment ctermfg=8
+hi Statement ctermfg=2
+hi Identifier ctermfg=4
 hi StatusLine cterm=none ctermfg=0 ctermbg=2
 
 " Scroll with arrow keys
