@@ -18,7 +18,7 @@ alias .....='cd ../../../..'
 
 alias a='ack'
 alias i='cd ~/Cloud'
-alias d='diff -u'
+alias d='colordiff -u'
 alias l='ls -lAhFG'
 alias note='vim ~/Cloud/Notes.txt'
 alias ts='date +%s'
