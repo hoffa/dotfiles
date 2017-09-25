@@ -45,6 +45,7 @@ hi NonText ctermfg=8
 hi CursorLineNr ctermfg=2
 hi LineNr ctermfg=8
 hi Comment ctermfg=8
+hi Search ctermfg=8
 hi Statement ctermfg=2
 hi Identifier ctermfg=4
 hi StatusLine cterm=none ctermfg=0 ctermbg=2
