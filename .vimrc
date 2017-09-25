@@ -15,6 +15,7 @@ set hidden " Hide buffers instead of closing them
 set listchars=trail:·,tab:»·,eol:¬,nbsp:% " Characters to display when using :list
 set scroll=4 " Lines to scroll with <C-U> and <C-D>
 set backspace=indent,eol,start
+set lazyredraw
 
 filetype indent on " Use filetype-specific indenting
 set autoindent " Indent when starting new line
@@ -33,6 +34,7 @@ set laststatus=2 " Always show status line
 set history=1000 " Command history size
 set showcmd " Show last command in bottom bar
 set wildmenu " Enable better command line completion
+set cursorline
 
 " Useful statusline
 set statusline=%n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l/%L\ 0x%02B\ %P
