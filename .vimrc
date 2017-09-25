@@ -42,6 +42,7 @@ set statusline=%n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l/%L\
 " Nice colors
 hi Normal ctermbg=none
 hi NonText ctermfg=8
+hi CursorLineNr ctermfg=2
 hi LineNr ctermfg=8
 hi Comment ctermfg=8
 hi Statement ctermfg=2
