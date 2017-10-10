@@ -16,7 +16,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias a='ack'
+alias a='ack --smart-case'
 alias i='cd ~/Cloud'
 alias d='colordiff -u'
 alias l='ls -lAhFG'
