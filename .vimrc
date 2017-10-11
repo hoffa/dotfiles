@@ -37,15 +37,12 @@ set wildmenu " Enable better command line completion
 set statusline=%n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l/%L\ 0x%02B\ %P
 
 " Nice colors
-hi Normal ctermbg=none
-hi NonText ctermfg=8
-hi CursorLineNr ctermfg=2
 hi LineNr ctermfg=8
 hi Comment ctermfg=8
 hi Search ctermfg=0
 hi Statement ctermfg=2
 hi Identifier ctermfg=4
-hi StatusLine cterm=none ctermfg=0 ctermbg=2
+hi StatusLine cterm=none ctermfg=0 ctermbg=3
 
 set pastetoggle=<F2>
 
