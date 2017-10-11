@@ -1,4 +1,4 @@
-" Chris Rehn's .vimrc
+" Chris' .vimrc
 " No plugins or other tacky stuff
 
 set nocompatible
@@ -34,7 +34,8 @@ set laststatus=2 " Always show status line
 set history=1000 " Command history size
 set showcmd " Show last command in bottom bar
 set wildmenu " Enable better command line completion
-set cursorline
+set cursorline " Gotta go fast
+set foldmethod=syntax " Only C/C++ get bloated enough for folding anyway :^)
 
 " Useful statusline
 set statusline=%n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l/%L\ 0x%02B\ %P
