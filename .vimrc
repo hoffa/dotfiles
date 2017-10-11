@@ -35,7 +35,9 @@ set history=1000 " Command history size
 set showcmd " Show last command in bottom bar
 set wildmenu " Enable better command line completion
 set cursorline " Gotta go fast
+
 set foldmethod=syntax " Only C/C++ get bloated enough for folding anyway :^)
+set foldlevelstart=100 " Don't fold on open
 
 " Useful statusline
 set statusline=%n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l/%L\ 0x%02B\ %P
