@@ -42,7 +42,7 @@ hi Comment ctermfg=8
 hi Search ctermfg=0
 hi Statement ctermfg=2
 hi Identifier ctermfg=4
-hi StatusLine cterm=none ctermfg=3 ctermbg=none
+hi StatusLine cterm=none ctermfg=0 ctermbg=3
 
 set pastetoggle=<F2>
 
