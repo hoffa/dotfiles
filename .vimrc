@@ -31,6 +31,10 @@ set laststatus=2 " Always show status line
 set showcmd " Show last command in bottom bar
 set wildmenu " Enable better command line completion
 
+" Speed up a bit
+set lazyredraw
+set ttyfast
+
 " Useful statusline
 set statusline=%n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l/%L\ 0x%02B\ %P
 
