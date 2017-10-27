@@ -10,10 +10,8 @@ set background=light
 
 set title " Change terminal title to filename
 set number " Show line numbers
-set hidden " Hide buffers instead of closing them
 set listchars=trail:·,tab:»·,eol:¬,nbsp:% " Characters to display when using :list
 set backspace=indent,eol,start
-set lazyredraw
 
 filetype indent on " Use filetype-specific indenting
 set autoindent " Indent when starting new line
