@@ -31,6 +31,7 @@ alias ts='date +%s'
 alias ts2date='date -ur'
 
 alias ga='git add'
+alias gba='git branch -a'
 alias gcm='git commit -m'
 alias gcam='git commit -am'
 alias gd='git diff'
