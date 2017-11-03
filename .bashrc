@@ -51,6 +51,6 @@ HISTFILESIZE=100000
 shopt -s histappend
 shopt -s checkwinsize
 
-PS1="$BLUE\u \$(smiley)$OFF at $BLUE\h$OFF in $RED\w $YELLOW\$(git_branch)$OFF\n\\$ "
+PS1="$YELLOW\A $BLUE\u \$(smiley)$OFF at $BLUE\h$OFF in $RED\w $YELLOW\$(git_branch)$OFF\n\\$ "
 
 fortune -s | cowsay -y -f small
