@@ -45,6 +45,7 @@ alias gpuom='git push -u origin master'
 alias grm='git rm'
 alias gs='git status'
 alias gsh='git show'
+alias gu='git remote get-url origin'
 
 HISTCONTROL=ignoredups:erasedups
 HISTSIZE=100000
