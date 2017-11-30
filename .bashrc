@@ -17,6 +17,8 @@ g() {
     grep -RHn --color=auto --exclude-dir=.git "$1" .
 }
 
+export CLICOLOR=1
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -25,7 +27,7 @@ alias .....='cd ../../../..'
 alias a='ack --smart-case'
 alias i='cd ~/Cloud'
 alias d='colordiff -u'
-alias l='ls -lAhFG'
+alias l='ls -lAhF'
 alias note='vim ~/Cloud/Notes.txt'
 alias ts='date +%s'
 alias ts2date='date -ur'
@@ -53,6 +55,6 @@ HISTFILESIZE=100000
 shopt -s histappend
 shopt -s checkwinsize
 
-PS1="$YELLOW\A $BLUE\u \$(smiley)$OFF at $BLUE\h$OFF in $RED\w $YELLOW\$(git_branch)$OFF\n\\$ "
+PS1="$YELLOW\A $BLUE\u \$(smiley)$OFF at $RED\h$OFF in $BLUE\w $YELLOW\$(git_branch)$OFF\n\\$ "
 
 fortune -s | cowsay -y -f small
