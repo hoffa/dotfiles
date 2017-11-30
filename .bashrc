@@ -27,7 +27,6 @@ alias .....='cd ../../../..'
 alias a='ack --smart-case'
 alias i='cd ~/Cloud'
 alias d='colordiff -u'
-alias note='vim ~/Cloud/Notes.txt'
 alias ts='date +%s'
 alias ts2date='date -ur'
 
@@ -58,6 +57,7 @@ PS1="$YELLOW\A $BLUE\u \$(smiley)$OFF at $RED\h$OFF in $BLUE\w $YELLOW\$(git_bra
 
 if [[ "$(uname)" == "Darwin" ]]; then
     alias l='ls -lAhF'
+    alias note='vim ~/Cloud/Notes.txt'
     fortune -s | cowsay -y -f small
 else
     alias l='ls -lAhF --color=auto'
