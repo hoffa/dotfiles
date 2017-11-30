@@ -57,4 +57,4 @@ shopt -s checkwinsize
 
 PS1="$YELLOW\A $BLUE\u \$(smiley)$OFF at $RED\h$OFF in $BLUE\w $YELLOW\$(git_branch)$OFF\n\\$ "
 
-fortune -s | cowsay -y -f small
+[[ "$(uname)" == "Darwin" ]] && fortune -s | cowsay -y -f small
