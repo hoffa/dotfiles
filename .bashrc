@@ -18,6 +18,8 @@ g() {
 }
 
 export CLICOLOR=1
+export VISUAL=vim
+export EDITOR=vim
 
 alias ..='cd ..'
 alias ...='cd ../..'

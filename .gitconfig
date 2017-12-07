@@ -1,0 +1,6 @@
+[user]
+	name = Christoffer Rehn
+	email = crehn@outlook.com
+
+[diff]
+    tool = vimdiff
