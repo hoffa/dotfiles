@@ -5,7 +5,7 @@ BLUE=$(tput setaf 4)
 OFF=$(tput sgr0)
 
 smiley() {
-    [ "$?" == "0" ] && echo "${GREEN}:)" || echo "${RED}:("
+    [ "$?" == "0" ] && echo "${GREEN}✓" || echo "${RED}✗"
 }
 git_branch() {
     git rev-parse --abbrev-ref HEAD 2> /dev/null
@@ -26,7 +26,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias a='ack --smart-case'
+alias a='rg --smart-case'
 alias i='cd ~/Cloud'
 alias d='colordiff -u'
 alias ts='date +%s'
@@ -54,11 +54,11 @@ HISTFILESIZE=100000
 shopt -s histappend
 shopt -s checkwinsize
 
-PS1="$YELLOW\A $BLUE\u \$(smiley)$OFF at $RED\h$OFF in $BLUE\w $YELLOW\$(git_branch)$OFF\n\\$ "
+PS1="\$(smiley) $YELLOW\A $BLUE\u$OFF at $RED\h$OFF in $BLUE\w $YELLOW\$(git_branch)$OFF\n\\$ "
 
 if [[ "$(uname)" == "Darwin" ]]; then
     alias l='ls -lAhF'
-    alias note='vim ~/Cloud/Notes.txt'
+    alias note='vim ~/Cloud/Notes.md'
     fortune -s | cowsay -y -f small
 else
     alias l='ls -lAhF --color=auto'
