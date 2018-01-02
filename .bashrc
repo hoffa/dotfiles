@@ -59,7 +59,6 @@ PS1="\$(smiley) $YELLOW\A $BLUE\u$OFF at $RED\h$OFF in $BLUE\w $YELLOW\$(git_bra
 if [[ "$(uname)" == "Darwin" ]]; then
     alias l='ls -lAhF'
     alias note='vim ~/Cloud/Notes.md'
-    fortune -s | cowsay -y -f small
 else
     alias l='ls -lAhF --color=auto'
 fi
