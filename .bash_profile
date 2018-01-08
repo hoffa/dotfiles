@@ -1,7 +1,8 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export PATH=$PATH:$(go env GOPATH)/bin
+PATH=$PATH:$(go env GOPATH)/bin
+export PATH=/usr/local/sbin:$PATH
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 [ -f ~/.bashrc ] && . ~/.bashrc
