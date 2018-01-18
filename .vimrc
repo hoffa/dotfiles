@@ -45,9 +45,9 @@ hi NonText ctermfg=8
 hi Search ctermfg=0
 hi Statement ctermfg=2
 hi Identifier ctermfg=4
-hi StatusLine cterm=none ctermfg=black ctermbg=3
-au InsertEnter * hi StatusLine ctermfg=7 ctermbg=4
-au InsertLeave * hi StatusLine ctermfg=black ctermbg=3
+hi StatusLine cterm=none ctermfg=15 ctermbg=8
+au InsertLeave * hi StatusLine ctermfg=15 ctermbg=8
+au InsertEnter * hi StatusLine ctermfg=0 ctermbg=3
 
 set pastetoggle=<F2>
 
