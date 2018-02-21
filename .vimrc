@@ -65,13 +65,12 @@ set pastetoggle=<F2>
 noremap <Up> <C-U>
 noremap <Down> <C-D>
 noremap <Left> <Nop>
-" Toggle show hidden characters
-noremap <silent> <Right> :set list!<CR>
+noremap <Right> :set list!<CR>
 
-nnoremap <silent> <CR> :nohl<CR>
-
+nnoremap <CR> :nohl<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>w :w!<CR>
+nnoremap <Leader><Space> <C-W>w
 nnoremap <Leader>n :bnext<CR>
 nnoremap <Leader>p :bprev<CR>
 nnoremap <Leader>l :ls<CR>
