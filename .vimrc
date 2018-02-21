@@ -61,13 +61,15 @@ au InsertEnter * hi StatusLine ctermfg=0 ctermbg=2
 
 set pastetoggle=<F2>
 
-" Scroll with arrow keys
 noremap <Up> <C-U>
 noremap <Down> <C-D>
 noremap <Left> <Nop>
 noremap <Right> :set list!<CR>
+nnoremap <CR> :nohl<CR>  AAa
 
-nnoremap <CR> :nohl<CR>
+" https://vi.stackexchange.com/questions/454/whats-the-simplest-way-to-strip-trailing-whitespace-from-all-lines-in-a-file
+nnoremap <Leader>z :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>w :w!<CR>
 nnoremap <Leader><Space> <C-W>w
