@@ -3,6 +3,7 @@
 
 set nocompatible
 set encoding=utf-8
+let mapleader=" "
 
 syntax on
 colorscheme default
@@ -35,8 +36,11 @@ set wildmenu " Enable better command line completion
 set lazyredraw
 set ttyfast
 
+set noerrorbells
+set novisualbell
+
 " Useful statusline
-set statusline=%n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l/%L\ 0x%02B\ %P
+set statusline=%n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l:%L\ 0x%02B\ %P
 
 " Nice colors
 hi LineNr ctermfg=8
@@ -55,8 +59,6 @@ hi StatusLine cterm=none ctermfg=0 ctermbg=3
 au InsertLeave * hi StatusLine ctermfg=0 ctermbg=3
 au InsertEnter * hi StatusLine ctermfg=0 ctermbg=2
 
-
-
 set pastetoggle=<F2>
 
 " Scroll with arrow keys
@@ -66,5 +68,15 @@ noremap <Left> <Nop>
 " Toggle show hidden characters
 noremap <silent> <Right> :set list!<CR>
 
-" Hide search results on <CR>
 nnoremap <silent> <CR> :nohl<CR>
+
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>w :w!<CR>
+nnoremap <Leader>n :bnext<CR>
+nnoremap <Leader>p :bprev<CR>
+nnoremap <Leader>l :ls<CR>
+nnoremap <Leader>b :Vexplore<CR>
+
+let g:netrw_winsize=25
+let g:netrw_browse_split=4
+let g:netrw_altv=1
