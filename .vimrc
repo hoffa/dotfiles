@@ -43,15 +43,19 @@ hi LineNr ctermfg=8
 hi Comment ctermfg=8
 hi NonText ctermfg=8
 hi Search ctermfg=0
+hi VertSplit ctermbg=8 ctermfg=8
 hi Type cterm=bold
 hi PreProc cterm=bold
 hi Special cterm=bold
 hi Constant cterm=bold ctermfg=1
 hi Statement cterm=bold ctermfg=2
 hi Identifier cterm=bold ctermfg=4
+hi StatusLineNC cterm=none ctermfg=3 ctermbg=8
 hi StatusLine cterm=none ctermfg=0 ctermbg=3
 au InsertLeave * hi StatusLine ctermfg=0 ctermbg=3
 au InsertEnter * hi StatusLine ctermfg=0 ctermbg=2
+
+
 
 set pastetoggle=<F2>
 

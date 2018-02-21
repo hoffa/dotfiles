@@ -58,7 +58,7 @@ HISTFILESIZE=100000
 shopt -s histappend
 shopt -s checkwinsize
 
-PS1="\$(smiley) $GREY\A $BLUE\u$GREY at $YELLOW\h$GREY in $BLUE\w $YELLOW\$(git_branch)$OFF\n\\$ "
+PS1="\$(smiley) $YELLOW\A $BLUE\u$OFF at $YELLOW\h$OFF in $BLUE\w $RED\$(git_branch)$OFF\n\\$ "
 
 if [[ "$(uname)" == "Darwin" ]]; then
     alias l='ls -lAhF'
