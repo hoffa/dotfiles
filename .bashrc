@@ -5,18 +5,10 @@ BLUE=$(tput setaf 4)
 GREY=$(tput setaf 8)
 OFF=$(tput sgr0)
 
-smiley() {
-    [ "$?" == "0" ] && echo "${GREEN}✓" || echo "${RED}✗"
-}
-git_branch() {
-    git rev-parse --abbrev-ref HEAD 2> /dev/null
-}
-f() {
-    find . -iname "*$1*"
-}
-g() {
-    grep -RHn --color=auto --exclude-dir=.git "$1" .
-}
+smiley() { [ "$?" == "0" ] && echo "${GREEN}✓" || echo "${RED}✗"; }
+git_branch() { git rev-parse --abbrev-ref HEAD 2> /dev/null; }
+f() { find . -iname "*$1*"; }
+g() { grep -RHn --color=auto --exclude-dir=.git "$1" .; }
 
 export CLICOLOR=1
 export VISUAL=vim
@@ -60,10 +52,12 @@ shopt -s checkwinsize
 
 PS1="\$(smiley) $YELLOW\A $BLUE\u$OFF at $YELLOW\h$OFF in $BLUE\w $RED\$(git_branch)$OFF\n\\$ "
 
-if [[ "$(uname)" == "Darwin" ]]; then
+if [ "$(uname)" = "Darwin" ]; then
     alias l='ls -lAhF'
     alias note='vim ~/Cloud/Notes.md'
     fortune -s | cowsay -f small -y
 else
     alias l='ls -lAhF --color=auto'
 fi
+
+c() { cd "$1" && l; }
