@@ -42,7 +42,6 @@ set novisualbell
 " Useful statusline
 set statusline=%n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l:%L\ 0x%02B\ %P
 
-" Nice colors
 hi LineNr ctermfg=8
 hi Comment ctermfg=8
 hi NonText ctermfg=8
@@ -54,6 +53,10 @@ hi Special cterm=bold
 hi Constant cterm=bold ctermfg=1
 hi Statement cterm=bold ctermfg=2
 hi Identifier cterm=bold ctermfg=4
+
+hi Pmenu ctermbg=8 ctermfg=3
+hi PmenuSel ctermbg=3 ctermfg=0
+
 hi StatusLineNC cterm=none ctermfg=3 ctermbg=8
 hi StatusLine cterm=none ctermfg=0 ctermbg=3
 au InsertLeave * hi StatusLine ctermfg=0 ctermbg=3
@@ -78,8 +81,7 @@ nnoremap <Leader>p :bprev<CR>
 nnoremap <Leader>l :ls<CR>
 nnoremap <Leader>b :Vexplore<CR>
 
-let g:netrw_winsize=25
+let g:netrw_winsize=20
 let g:netrw_browse_split=4
 let g:netrw_liststyle=3
-let g:netrw_banner=0
 let g:netrw_altv=1
