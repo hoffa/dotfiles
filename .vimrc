@@ -60,7 +60,7 @@ hi PmenuSel ctermbg=3 ctermfg=0
 hi StatusLineNC cterm=none ctermfg=3 ctermbg=8
 hi StatusLine cterm=none ctermfg=0 ctermbg=3
 au InsertLeave * hi StatusLine ctermfg=0 ctermbg=3
-au InsertEnter * hi StatusLine ctermfg=0 ctermbg=2
+au InsertEnter * hi StatusLine ctermfg=15 ctermbg=2
 
 set pastetoggle=<F2>
 
