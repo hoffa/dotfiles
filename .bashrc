@@ -3,6 +3,7 @@ GREEN=$(tput setaf 2)
 YELLOW=$(tput setaf 3)
 BLUE=$(tput setaf 4)
 GREY=$(tput setaf 8)
+BOLD=$(tput bold)
 OFF=$(tput sgr0)
 
 smiley() { [ "$?" == "0" ] && echo "${GREEN}✓" || echo "${RED}✗"; }
@@ -42,7 +43,8 @@ alias grm='git rm'
 alias gs='git status'
 alias gsh='git show'
 alias gu='git remote -v'
-alias gresetsub='git submodule foreach --recursive git checkout .'
+alias gsubcheckout='git submodule foreach --recursive git checkout .'
+alias gsubupdate='git submodule update --recursive --init'
 
 HISTCONTROL=ignoredups:erasedups
 HISTSIZE=100000
@@ -50,7 +52,7 @@ HISTFILESIZE=100000
 shopt -s histappend
 shopt -s checkwinsize
 
-PS1="\$(smiley) $YELLOW\A $BLUE\u$OFF at $YELLOW\h$OFF in $BLUE\w $RED\$(git_branch)$OFF\n\\$ "
+PS1="\$(smiley) $YELLOW\A $BOLD$BLUE\u$OFF at $BOLD$YELLOW\h$OFF in $BOLD$BLUE\w $OFF$RED\$(git_branch)$OFF\n\\$ "
 
 if [ "$(uname)" = "Darwin" ]; then
     alias l='ls -lAhF'
