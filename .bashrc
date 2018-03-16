@@ -6,7 +6,7 @@ GREY=$(tput setaf 8)
 BOLD=$(tput bold)
 OFF=$(tput sgr0)
 
-smiley() { [ "$?" == "0" ] && echo "${GREEN}:)" || echo "${RED}:("; }
+smiley() { [ "$?" == "0" ] && echo "${GREEN}${BOLD}:)${OFF}" || echo "${RED}${BOLD}:(${OFF}"; }
 git_branch() { git rev-parse --abbrev-ref HEAD 2> /dev/null; }
 f() { find . -iname "*$1*"; }
 g() { grep -RHn --color=auto --exclude-dir=.git "$1" .; }
