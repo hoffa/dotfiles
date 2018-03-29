@@ -55,7 +55,7 @@ hi Statement cterm=bold ctermfg=2
 hi Identifier cterm=bold ctermfg=4
 
 hi StatusLineNC cterm=none ctermbg=2
-hi StatusLine cterm=bold ctermbg=2
+hi StatusLine cterm=bold ctermbg=2 ctermfg=0
 au InsertLeave * hi StatusLine ctermbg=2
 au InsertEnter * hi StatusLine ctermbg=3
 
