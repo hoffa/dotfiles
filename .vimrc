@@ -39,20 +39,24 @@ set ttyfast
 set noerrorbells
 set novisualbell
 
+" Make italics work
+set t_ZH=[3m
+set t_ZR=[23m
+
 " Useful statusline
 set statusline=%n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l:%L\ 0x%02B\ %P
 
 hi LineNr ctermfg=8
-hi Comment ctermfg=8
+hi Comment ctermfg=8 cterm=italic
 hi NonText ctermfg=8
 hi Search ctermfg=0
 hi VertSplit ctermbg=8 ctermfg=8
-hi Type cterm=bold
-hi PreProc cterm=bold
-hi Special cterm=bold
-hi Constant cterm=bold ctermfg=1
-hi Statement cterm=bold ctermfg=2
-hi Identifier cterm=bold ctermfg=4
+hi Type cterm=bold,italic
+hi PreProc cterm=bold,italic
+hi Special cterm=bold,italic
+hi Constant cterm=bold,italic
+hi Statement cterm=bold,italic ctermfg=2
+hi Identifier cterm=bold,italic ctermfg=4
 
 hi StatusLineNC cterm=none ctermbg=2
 hi StatusLine cterm=bold ctermbg=2 ctermfg=0
