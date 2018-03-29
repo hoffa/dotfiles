@@ -6,7 +6,7 @@ GREY=$(tput setaf 8)
 BOLD=$(tput bold)
 OFF=$(tput sgr0)
 
-smiley() { [ "$?" == "0" ] && echo "${GREEN}${BOLD}:)${OFF}" || echo "${RED}${BOLD}:(${OFF}"; }
+smiley() { [ "$?" == "0" ] && echo "${GREEN}:)${OFF}" || echo "${RED}:(${OFF}"; }
 git_branch() { git rev-parse --abbrev-ref HEAD 2> /dev/null; }
 f() { find . -iname "*$1*"; }
 g() { grep -RHn --color=auto --exclude-dir=.git "$1" .; }
@@ -52,7 +52,7 @@ HISTFILESIZE=100000
 shopt -s histappend
 shopt -s checkwinsize
 
-PS1="\$(smiley) $YELLOW\A $BOLD$BLUE\u$OFF at $BOLD$RED\h$OFF in $BOLD$BLUE\w $OFF$RED\$(git_branch)$OFF\n\$ "
+PS1="$BOLD$BLUE\u$OFF at $BOLD$RED\h$OFF in $BOLD$BLUE\w \$(smiley) \A $OFF\$(git_branch)\n\$ "
 
 if [ "$(uname)" = "Darwin" ]; then
     alias l='ls -lAhF'
