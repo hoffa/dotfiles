@@ -54,13 +54,10 @@ hi Constant cterm=bold ctermfg=1
 hi Statement cterm=bold ctermfg=2
 hi Identifier cterm=bold ctermfg=4
 
-hi Pmenu ctermbg=8 ctermfg=3
-hi PmenuSel ctermbg=3 ctermfg=0
-
-hi StatusLineNC cterm=none ctermfg=3 ctermbg=8
-hi StatusLine cterm=none ctermfg=0 ctermbg=3
-au InsertLeave * hi StatusLine ctermfg=0 ctermbg=3
-au InsertEnter * hi StatusLine ctermfg=15 ctermbg=2
+hi StatusLineNC cterm=none ctermbg=2
+hi StatusLine cterm=bold ctermbg=2
+au InsertLeave * hi StatusLine ctermbg=2
+au InsertEnter * hi StatusLine ctermbg=3
 
 set pastetoggle=<F2>
 
@@ -68,7 +65,7 @@ noremap <Up> <C-U>
 noremap <Down> <C-D>
 noremap <Left> <Nop>
 noremap <Right> :set list!<CR>
-nnoremap <CR> :nohl<CR>  AAa
+nnoremap <CR> :nohl<CR>
 
 " https://vi.stackexchange.com/questions/454/whats-the-simplest-way-to-strip-trailing-whitespace-from-all-lines-in-a-file
 nnoremap <Leader>z :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
