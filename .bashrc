@@ -1,9 +1,10 @@
-RED="\e[3;31;1m"
-BLUE="\e[3;34;1m"
+RED="\e[31m"
+BLUE="\e[34m"
+GREEN="\e[32m"
+ITAL="\e[3m"
+BOLD="\e[1m"
 OFF="\e[0m"
 
-smiley() { [ "$?" == "0" ] && printf ":)" || printf "${RED}:(${OFF}"; }
-git_branch() { git rev-parse --abbrev-ref HEAD 2> /dev/null; }
 f() { find . -iname "*$1*"; }
 g() { grep -RHn --color=auto --exclude-dir=.git "$1" .; }
 
@@ -48,7 +49,12 @@ HISTFILESIZE=100000
 shopt -s histappend
 shopt -s checkwinsize
 
-PS1="$BLUE\u$OFF in $RED\h$OFF at $BLUE\w $OFF\$(smiley) \A $OFF\$(git_branch)\n\$ "
+__smiley() { [ "$1" = "0" ] && printf "${GREEN}✓${OFF}" || printf "${RED}$1${OFF}"; }
+__prompt_command() {
+    local STATUS="$?"
+    PS1="$BLUE$ITAL$BOLD\u$OFF at $RED$ITAL$BOLD\h$OFF in $BLUE$ITAL$BOLD\w$OFF\$(__git_ps1) $OFF(\A) \$(__smiley $STATUS) \n\$ "
+}
+PROMPT_COMMAND=__prompt_command
 
 if [ "$(uname)" = "Darwin" ]; then
     alias l='ls -lAhF'
