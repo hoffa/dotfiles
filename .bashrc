@@ -18,10 +18,11 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 alias a='rg --smart-case'
-alias i='cd ~/Cloud'
+alias c='( while [ ! -d .git ]; do cd ..; done; echo "😻 generating ctags in $(pwd)"; ctags -R )'
 alias d='colordiff -u'
-alias t='date +%s'
+alias i='cd ~/Cloud'
 alias t2d='date -ur'
+alias t='date +%s'
 alias v='vim'
 alias x='exit'
 
@@ -49,7 +50,7 @@ HISTFILESIZE=100000
 shopt -s histappend
 shopt -s checkwinsize
 
-__smiley() { [ "$1" = "0" ] && printf "${GREEN}✓${OFF}" || printf "${RED}$1${OFF}"; }
+__smiley() { [ "$1" = "0" ] && printf "${GREEN}${BOLD}✓${OFF}" || printf "${RED}${BOLD}$1${OFF}"; }
 __prompt_command() {
     local STATUS="$?"
     PS1="$BLUE$ITAL$BOLD\u$OFF at $RED$ITAL$BOLD\h$OFF in $BLUE$ITAL$BOLD\w$OFF\$(__git_ps1) $OFF(\A) \$(__smiley $STATUS) \n\$ "
@@ -63,5 +64,3 @@ if [ "$(uname)" = "Darwin" ]; then
 else
     alias l='ls -lAhF --color=auto'
 fi
-
-c() { cd "$1" && l; }
