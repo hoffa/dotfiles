@@ -9,6 +9,8 @@ syntax on
 colorscheme default
 set background=light
 
+set tags=tags;/
+
 set title " Change terminal title to filename
 set number " Show line numbers
 set listchars=trail:·,tab:»·,eol:¬,nbsp:% " Characters to display when using :list
