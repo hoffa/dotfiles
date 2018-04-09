@@ -43,8 +43,27 @@ set novisualbell
 set t_ZH=[3m
 set t_ZR=[23m
 
+hi User1 ctermbg=1
+hi User2 ctermbg=2
+hi User3 ctermbg=3
+hi User4 ctermbg=4
+hi User5 ctermbg=5
+hi User6 ctermbg=6
+hi User7 ctermbg=7
+hi User8 ctermbg=8
+hi User9 ctermbg=0
+
 " Useful statusline
-set statusline=%n\ %f\ [%{(&fenc!=''?&fenc:&enc)}][%{&ff}]%y%r%m%w%<%=%c\ %l:%L\ 0x%02B\ %P
+set statusline=
+set statusline+=%2*\ %n
+set statusline+=%2*\ %f\ 
+set statusline+=%3*\ %{&ft}\ 
+set statusline+=%8*\ %{(&fenc!=''?&fenc:&enc)}\ 
+set statusline+=%9*%<%=
+set statusline+=%8*\ 0x%02B\ 
+set statusline+=%3*\ %{&ff}\ 
+set statusline+=%2*\ %l:%c\ 
+"set statusline+=%1*\ %P\ 
 
 hi LineNr ctermfg=8
 hi Comment ctermfg=8 cterm=italic
@@ -73,6 +92,9 @@ nnoremap <CR> :nohl<CR>
 
 " https://vi.stackexchange.com/questions/454/whats-the-simplest-way-to-strip-trailing-whitespace-from-all-lines-in-a-file
 nnoremap <Leader>z :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+nnoremap <Leader>, 0r☐`.g;g;
+nnoremap <Leader>. 0r☑`.g;
 
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>w :w!<CR>
