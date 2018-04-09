@@ -18,9 +18,7 @@ set backspace=indent,eol,start
 
 filetype indent on " Use filetype-specific indenting
 set autoindent " Indent when starting new line
-set smartindent " Be a bit smarter about it
 set expandtab " Use spaces instead of tabs
-set smarttab " Be smart about what tab to insert
 set shiftwidth=4 " Spaces when reindenting
 set softtabstop=4 " Spaces when hitting tab
 set tabstop=4 " Visual spaces per tab
