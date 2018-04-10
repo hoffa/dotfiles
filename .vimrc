@@ -58,9 +58,9 @@ set statusline=
 set statusline+=%3*\ %n
 set statusline+=%3*\ %f\ 
 set statusline+=%8*\ %{&ft}\ 
-set statusline+=%7*\ %{(&fenc!=''?&fenc:&enc)}\ 
-set statusline+=%7*%<%=
 set statusline+=%7*\ 0x%02B\ 
+set statusline+=%7*%<%=
+set statusline+=%7*\ %{(&fenc!=''?&fenc:&enc)}\ 
 set statusline+=%8*\ %{&ff}\ 
 set statusline+=%3*\ %l:%c\ 
 "set statusline+=%1*\ %P\ 
