@@ -45,24 +45,24 @@ set t_ZR=[23m
 
 hi User1 ctermbg=1
 hi User2 ctermbg=2
-hi User3 ctermbg=3
+hi User3 ctermbg=3 ctermfg=0
 hi User4 ctermbg=4
 hi User5 ctermbg=5
 hi User6 ctermbg=6
-hi User7 ctermbg=7
-hi User8 ctermbg=8
+hi User7 ctermbg=7 ctermfg=8
+hi User8 ctermbg=8 ctermfg=7
 hi User9 ctermbg=0
 
 " Useful statusline
 set statusline=
-set statusline+=%2*\ %n
-set statusline+=%2*\ %f\ 
-set statusline+=%3*\ %{&ft}\ 
-set statusline+=%8*\ %{(&fenc!=''?&fenc:&enc)}\ 
-set statusline+=%9*%<%=
-set statusline+=%8*\ 0x%02B\ 
-set statusline+=%3*\ %{&ff}\ 
-set statusline+=%2*\ %l:%c\ 
+set statusline+=%3*\ %n
+set statusline+=%3*\ %f\ 
+set statusline+=%8*\ %{&ft}\ 
+set statusline+=%7*\ %{(&fenc!=''?&fenc:&enc)}\ 
+set statusline+=%7*%<%=
+set statusline+=%7*\ 0x%02B\ 
+set statusline+=%8*\ %{&ff}\ 
+set statusline+=%3*\ %l:%c\ 
 "set statusline+=%1*\ %P\ 
 
 hi LineNr ctermfg=8
@@ -92,9 +92,6 @@ nnoremap <CR> :nohl<CR>
 
 " https://vi.stackexchange.com/questions/454/whats-the-simplest-way-to-strip-trailing-whitespace-from-all-lines-in-a-file
 nnoremap <Leader>z :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-
-nnoremap <Leader>, 0r☐`.g;g;
-nnoremap <Leader>. 0r☑`.g;
 
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>w :w!<CR>
