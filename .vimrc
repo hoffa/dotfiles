@@ -4,6 +4,7 @@
 set nocompatible
 set encoding=utf-8
 let mapleader=" "
+set shellcmdflag=-ic " So ! behaves like my shell
 
 syntax on
 colorscheme default
@@ -100,6 +101,7 @@ nnoremap <Leader>n :bnext<CR>
 nnoremap <Leader>p :bprev<CR>
 nnoremap <Leader>l :ls<CR>
 nnoremap <Leader>b :Vexplore<CR>
+nnoremap <Leader>t :! c<CR>
 
 let g:netrw_winsize=20
 let g:netrw_browse_split=4
