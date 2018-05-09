@@ -17,7 +17,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias a='rg --smart-case'
+alias a='rg --smart-case --ignore-file ~/.gitignore_global'
 alias c='( while [ ! -d .git ]; do cd ..; done; echo "😻 generating ctags in $(pwd)"; ctags -R )'
 alias d='colordiff -u'
 alias i='cd ~/Cloud'
@@ -50,10 +50,10 @@ HISTFILESIZE=100000
 shopt -s histappend
 shopt -s checkwinsize
 
-__smiley() { [ "$1" = "0" ] && printf "${GREEN}${BOLD}✓${OFF}" || printf "${RED}${BOLD}$1${OFF}"; }
+__smiley() { [ "$1" = "0" ] && printf "${GREEN}${ITAL}✓${OFF}" || printf "${RED}${ITAL}$1${OFF}"; }
 __prompt_command() {
     local STATUS="$?"
-    PS1="$BLUE$ITAL$BOLD\u$OFF at $RED$ITAL$BOLD\h$OFF in $BLUE$ITAL$BOLD\w$OFF\$(__git_ps1) $OFF(\A) \$(__smiley $STATUS) \n\$ "
+    PS1="$BLUE$ITAL\u$OFF at $RED$ITAL\h$OFF in $BLUE$ITAL\w$OFF\$(__git_ps1) $OFF(\A) \$(__smiley $STATUS) \n\$ "
 }
 PROMPT_COMMAND=__prompt_command
 

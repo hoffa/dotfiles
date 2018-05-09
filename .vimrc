@@ -4,7 +4,6 @@
 set nocompatible
 set encoding=utf-8
 let mapleader=" "
-set shellcmdflag=-ic " So ! behaves like my shell
 
 syntax on
 colorscheme default
@@ -46,7 +45,7 @@ set t_ZR=[23m
 
 hi User1 ctermbg=1
 hi User2 ctermbg=2
-hi User3 ctermbg=3 ctermfg=0
+hi User3 ctermbg=5 ctermfg=7
 hi User4 ctermbg=4
 hi User5 ctermbg=5
 hi User6 ctermbg=6
@@ -71,15 +70,15 @@ hi Comment ctermfg=8 cterm=italic
 hi NonText ctermfg=8
 hi Search ctermfg=0
 hi VertSplit ctermbg=8 ctermfg=8
-hi Special cterm=bold,italic ctermfg=5
-hi Constant cterm=bold,italic ctermfg=1
-hi Type cterm=bold,italic ctermfg=2
-hi PreProc cterm=bold,italic ctermfg=4
-hi Statement cterm=bold,italic ctermfg=3
-hi Identifier cterm=bold,italic ctermfg=6
+hi Special cterm=italic ctermfg=5
+hi Constant cterm=italic ctermfg=1
+hi Type cterm=italic ctermfg=2
+hi PreProc cterm=italic ctermfg=4
+hi Statement cterm=italic ctermfg=3
+hi Identifier cterm=italic ctermfg=6
 
 hi StatusLineNC cterm=none ctermbg=2
-hi StatusLine cterm=bold ctermbg=2 ctermfg=0
+hi StatusLine cterm=none ctermbg=2 ctermfg=0
 au InsertLeave * hi StatusLine ctermbg=2
 au InsertEnter * hi StatusLine ctermbg=3
 
