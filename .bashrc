@@ -25,6 +25,7 @@ alias t2d='date -ur'
 alias t='date +%s'
 alias v='vim'
 alias x='exit'
+alias brewsky='brew update && brew upgrade && brew cleanup && brew prune; brew doctor'
 
 alias ga='git add'
 alias gba='git branch -a'
