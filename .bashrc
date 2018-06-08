@@ -26,6 +26,7 @@ alias t='date +%s'
 alias v='vim'
 alias x='exit'
 alias brewsky='brew update && brew upgrade && brew cleanup && brew prune; brew doctor'
+alias dr='docker run --rm -it'
 
 alias ga='git add'
 alias gba='git branch -a'
