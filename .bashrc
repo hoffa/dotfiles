@@ -18,20 +18,23 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 alias a='rg --smart-case --ignore-file ~/.gitignore_global'
+alias brewsky='brew update && brew upgrade && brew cleanup && brew prune; brew doctor'
 alias c='( while [ ! -d .git ]; do cd ..; done; echo "😻 generating ctags in $(pwd)"; ctags -R )'
 alias d='colordiff -u'
+alias dr='docker run --rm -it'
 alias i='cd ~/Cloud'
+alias l='ls -lAhF'
+alias note='vim ~/Cloud/Notes.md'
+alias q='fortune -s | cowsay -y | lolcat -p 10 -F 0.05'
 alias t2d='date -ur'
 alias t='date +%s'
 alias v='vim'
 alias x='exit'
-alias brewsky='brew update && brew upgrade && brew cleanup && brew prune; brew doctor'
-alias dr='docker run --rm -it'
 
 alias ga='git add'
 alias gba='git branch -a'
-alias gcm='git commit -m'
 alias gcam='git commit -am'
+alias gcm='git commit -m'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias gdwd='git diff --word-diff'
@@ -43,9 +46,9 @@ alias gpoh='git push -u origin HEAD'
 alias grm='git rm'
 alias gs='git status'
 alias gsh='git show'
-alias gu='git remote -v'
 alias gsubcheckout='git submodule foreach --recursive git checkout .'
 alias gsubupdate='git submodule update --recursive --init'
+alias gu='git remote -v'
 
 HISTCONTROL=ignoredups:erasedups
 HISTSIZE=100000
@@ -59,11 +62,3 @@ __prompt_command() {
     PS1="$BLUE$ITAL\u$OFF at $RED$ITAL\h$OFF in $BLUE$ITAL\w$OFF\$(__git_ps1) $OFF(\A) \$(__smiley $STATUS) \n\$ "
 }
 PROMPT_COMMAND=__prompt_command
-
-if [ "$(uname)" = "Darwin" ]; then
-    alias l='ls -lAhF'
-    alias note='vim ~/Cloud/Notes.md'
-    fortune -s | cowsay -f small -y
-else
-    alias l='ls -lAhF --color=auto'
-fi
