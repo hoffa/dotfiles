@@ -57,8 +57,12 @@ shopt -s histappend
 shopt -s checkwinsize
 
 __smiley() { [ "$1" = "0" ] && printf "${GREEN}${ITAL}✓${OFF}" || printf "${RED}${ITAL}$1${OFF}"; }
+__git_branch() {
+    branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+    [ ! -z "${branch}" ] && printf " (${branch})"
+}
 __prompt_command() {
     local STATUS="$?"
-    PS1="$BLUE$ITAL\u$OFF at $RED$ITAL\h$OFF in $BLUE$ITAL\w$OFF\$(__git_ps1) $OFF(\A) \$(__smiley $STATUS) \n\$ "
+    PS1="$BLUE$ITAL\u$OFF at $RED$ITAL\h$OFF in $BLUE$ITAL\w$OFF\$(__git_branch) (\A) \$(__smiley $STATUS) \n\$ "
 }
 PROMPT_COMMAND=__prompt_command

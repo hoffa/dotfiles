@@ -1,11 +1,9 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-PATH=$PATH:$(go env GOPATH)/bin
-export PATH=/usr/local/sbin:$PATH
+export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:$HOME/go/bin
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 [ -f ~/.bashrc ] && . ~/.bashrc
-
-[ -f $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
-complete -C $(brew --prefix)/bin/aws_completer aws
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
