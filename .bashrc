@@ -22,6 +22,7 @@ alias brewsky='brew update && brew upgrade && brew cleanup && brew prune; brew d
 alias c='( while [ ! -d .git ]; do cd ..; done; echo "😻 generating ctags in $(pwd)"; ctags -R )'
 alias d='colordiff -u'
 alias dr='docker run --rm -it'
+alias hg='history | grep'
 alias i='cd ~/Cloud'
 alias l='ls -lAhFT'
 alias note='vim ~/Cloud/Notes.md'
