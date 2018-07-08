@@ -1,6 +1,5 @@
 RED="\e[31m"
 BLUE="\e[34m"
-GREEN="\e[32m"
 OFF="\e[0m"
 
 f() { find . -iname "*$1*"; }
@@ -16,13 +15,9 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 alias a='rg --smart-case --ignore-file ~/.gitignore_global'
-alias brewsky='brew update && brew upgrade && brew cleanup && brew prune; brew doctor'
 alias c='( while [ ! -d .git ]; do cd ..; done; echo "😻 generating ctags in $(pwd)"; ctags -R )'
 alias d='colordiff -u'
 alias ha='history | rg'
-alias i='cd ~/Cloud'
-alias l='ls -lAhF'
-alias note='vim ~/Cloud/Notes.md'
 alias t2d='date -ur'
 alias t='date +%s'
 alias x='exit'
@@ -46,6 +41,15 @@ alias gsh='git show'
 alias gsubcheckout='git submodule foreach --recursive git checkout .'
 alias gsubupdate='git submodule update --recursive --init'
 alias gu='git remote -v'
+
+if [[ $(uname) = "Darwin" ]]; then
+    alias brewsky='brew update && brew upgrade && brew cleanup && brew prune; brew doctor'
+    alias i='cd ~/Cloud'
+    alias l='ls -lAhFT'
+    alias note='vim ~/Cloud/Notes.md'
+else
+    alias l='ls -lAhF --color'
+fi
 
 HISTCONTROL=ignoredups:erasedups
 HISTSIZE=100000
