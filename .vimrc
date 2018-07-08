@@ -39,15 +39,12 @@ set ttyfast
 set noerrorbells
 set novisualbell
 
-set statusline+=\ %n\ 
-set statusline+=%f\ 
+set statusline+=\ %f\ 
 set statusline+=%<%=
 set statusline+=%l:%c\ 
-set statusline+=0x%02B\ 
 set statusline+=%{&ft}\ 
 set statusline+=%{&ff}\ 
 set statusline+=%{(&fenc!=''?&fenc:&enc)}\ 
-set statusline+=%P\ 
 
 hi LineNr ctermfg=8
 hi Comment ctermfg=8
