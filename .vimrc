@@ -12,7 +12,7 @@ set background=light
 set tags=tags;/
 
 set title " Change terminal title to filename
-set number " Show line numbers
+set number
 set listchars=trail:·,tab:»·,eol:¬,nbsp:% " Characters to display when using :list
 set backspace=indent,eol,start
 
@@ -39,47 +39,29 @@ set ttyfast
 set noerrorbells
 set novisualbell
 
-" Make italics work
-set t_ZH=[3m
-set t_ZR=[23m
-
-hi User1 ctermbg=3 ctermfg=0
-hi User2 ctermbg=2
-hi User3 ctermbg=5 ctermfg=7
-hi User4 ctermbg=4
-hi User5 ctermbg=5
-hi User6 ctermbg=6
-hi User7 ctermbg=7 ctermfg=8
-hi User8 ctermbg=8 ctermfg=7
-hi User9 ctermbg=0
-
-set statusline=
-set statusline+=%1*\ %n\ 
-set statusline+=%3*\ %f\ 
-set statusline+=%8*\ %{&ft}\ 
-set statusline+=%7*\ 0x%02B\ 
-set statusline+=%7*%<%=
-set statusline+=%7*\ %{(&fenc!=''?&fenc:&enc)}\ 
-set statusline+=%8*\ %{&ff}\ 
-set statusline+=%3*\ %l:%c\ 
-set statusline+=%1*\ %P\ 
+set statusline+=\ %n\ 
+set statusline+=%f\ 
+set statusline+=%<%=
+set statusline+=%l:%c\ 
+set statusline+=0x%02B\ 
+set statusline+=%{&ft}\ 
+set statusline+=%{&ff}\ 
+set statusline+=%{(&fenc!=''?&fenc:&enc)}\ 
+set statusline+=%P\ 
 
 hi LineNr ctermfg=8
-hi Comment ctermfg=8 cterm=italic
+hi Comment ctermfg=8
 hi NonText ctermfg=8
 hi Search ctermfg=0
 hi VertSplit ctermbg=8 ctermfg=8
-hi Special cterm=italic ctermfg=5
-hi Constant cterm=italic ctermfg=1
-hi Type cterm=italic ctermfg=2
-hi PreProc cterm=italic ctermfg=4
-hi Statement cterm=italic ctermfg=3
-hi Identifier cterm=italic ctermfg=6
+hi Special ctermfg=5
+hi Constant ctermfg=1
+hi Type ctermfg=2
+hi PreProc ctermfg=4
+hi Statement ctermfg=3
+hi Identifier ctermfg=6
 
-hi StatusLineNC cterm=none ctermbg=2
-hi StatusLine cterm=none ctermbg=2 ctermfg=0
-au InsertLeave * hi StatusLine ctermbg=2
-au InsertEnter * hi StatusLine ctermbg=3
+hi StatusLine cterm=none ctermbg=5 ctermfg=7
 
 set pastetoggle=<F2>
 
@@ -99,7 +81,6 @@ nnoremap <Leader>n :bnext<CR>
 nnoremap <Leader>p :bprev<CR>
 nnoremap <Leader>l :ls<CR>
 nnoremap <Leader>b :Vexplore<CR>
-nnoremap <Leader>t :! c<CR>
 
 let g:netrw_winsize=20
 let g:netrw_browse_split=4

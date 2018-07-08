@@ -1,8 +1,6 @@
 RED="\e[31m"
 BLUE="\e[34m"
 GREEN="\e[32m"
-ITAL="\e[3m"
-BOLD="\e[1m"
 OFF="\e[0m"
 
 f() { find . -iname "*$1*"; }
@@ -21,7 +19,6 @@ alias a='rg --smart-case --ignore-file ~/.gitignore_global'
 alias brewsky='brew update && brew upgrade && brew cleanup && brew prune; brew doctor'
 alias c='( while [ ! -d .git ]; do cd ..; done; echo "😻 generating ctags in $(pwd)"; ctags -R )'
 alias d='colordiff -u'
-alias dr='docker run --rm -it'
 alias hg='history | grep'
 alias i='cd ~/Cloud'
 alias l='ls -lAhFT'
@@ -57,13 +54,13 @@ HISTFILESIZE=100000
 shopt -s histappend
 shopt -s checkwinsize
 
-__smiley() { [ "$1" = "0" ] && printf "${GREEN}${ITAL}✓${OFF}" || printf "${RED}${ITAL}$1${OFF}"; }
+__smiley() { [ "$1" = "0" ] && printf "${GREEN}✓${OFF}" || printf "${RED}$1${OFF}"; }
 __git_branch() {
     branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
     [ ! -z "${branch}" ] && printf " (${branch})"
 }
 __prompt_command() {
     local STATUS="$?"
-    PS1="$BLUE$ITAL\u$OFF at $RED$ITAL\h$OFF in $BLUE$ITAL\w$OFF\$(__git_branch) (\A) \$(__smiley $STATUS) \n\$ "
+    PS1="$BLUE\u$OFF at $RED\h$OFF in $BLUE\w$OFF\$(__git_branch) (\A) \$(__smiley $STATUS) \n\$ "
 }
 PROMPT_COMMAND=__prompt_command
