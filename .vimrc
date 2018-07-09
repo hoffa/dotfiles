@@ -58,7 +58,7 @@ hi PreProc ctermfg=4
 hi Statement ctermfg=3
 hi Identifier ctermfg=6
 
-hi StatusLine cterm=none ctermbg=5 ctermfg=7
+hi StatusLine cterm=none ctermbg=2 ctermfg=0
 
 set pastetoggle=<F2>
 
