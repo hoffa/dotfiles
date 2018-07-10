@@ -6,12 +6,9 @@ set encoding=utf-8
 let mapleader=" "
 
 syntax on
-colorscheme default
-set background=light
 
 set tags=tags;/
 
-set title " Change terminal title to filename
 set number
 set listchars=trail:·,tab:»·,eol:¬,nbsp:% " Characters to display when using :list
 set backspace=indent,eol,start
@@ -32,7 +29,6 @@ set laststatus=2 " Always show status line
 set showcmd " Show last command in bottom bar
 set wildmenu " Enable better command line completion
 
-" Speed up a bit
 set lazyredraw
 set ttyfast
 
@@ -50,7 +46,6 @@ hi LineNr ctermfg=8
 hi Comment ctermfg=8
 hi NonText ctermfg=8
 hi Search ctermfg=0
-hi VertSplit ctermbg=8 ctermfg=8
 hi Special ctermfg=5
 hi Constant ctermfg=1
 hi Type ctermfg=2
@@ -58,7 +53,7 @@ hi PreProc ctermfg=4
 hi Statement ctermfg=3
 hi Identifier ctermfg=6
 
-hi StatusLine cterm=none ctermbg=2 ctermfg=0
+hi StatusLine cterm=reverse ctermfg=4
 
 set pastetoggle=<F2>
 
@@ -76,7 +71,6 @@ nnoremap <Leader>w :w!<CR>
 nnoremap <Leader><Space> <C-W>w
 nnoremap <Leader>n :bnext<CR>
 nnoremap <Leader>p :bprev<CR>
-nnoremap <Leader>l :ls<CR>
 nnoremap <Leader>b :Vexplore<CR>
 
 let g:netrw_winsize=20
