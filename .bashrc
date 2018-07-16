@@ -21,7 +21,6 @@ alias d='colordiff -u'
 alias ha='history | rg'
 alias t2d='date -ur'
 alias t='date +%s'
-alias x='exit'
 
 alias ga='git add'
 alias gba='git branch -a'
