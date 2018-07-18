@@ -46,11 +46,12 @@ if [[ $(uname) = "Darwin" ]]; then
     alias brewsky='brew update && brew upgrade && brew cleanup && brew prune; brew doctor'
     alias i='cd ~/Cloud'
     alias l='ls -lAhFT'
-    alias note='vim ~/Cloud/Notes.md'
+    alias note='vim +"r!date" ~/Cloud/Notes.md'
 else
     alias l='ls -lAhF --color'
 fi
 
+HISTTIMEFORMAT='%F %T '
 HISTCONTROL=ignoredups:erasedups
 HISTSIZE=100000
 HISTFILESIZE=100000
@@ -64,6 +65,6 @@ __git_branch() {
 }
 __prompt_command() {
     local STATUS="$?"
-    PS1="$BLUE\u$OFF at $RED\h$OFF in $BLUE\w$OFF\$(__git_branch) (\A) \$(__smiley $STATUS) \n\$ "
+    PS1="$BLUE\u$OFF at $RED\h$OFF in $BLUE\w$OFF\$(__git_branch) \$(__smiley $STATUS) \n\$ "
 }
 PROMPT_COMMAND=__prompt_command
