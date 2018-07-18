@@ -61,7 +61,7 @@ shopt -s checkwinsize
 __smiley() { [ "$1" = "0" ] && printf "${GREEN}✓${OFF}" || printf "${RED}$1${OFF}"; }
 __git_branch() {
     branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
-    [ ! -z "${branch}" ] && printf " (${branch})"
+    [ ! -z "${branch}" ] && printf " $RED${branch}$OFF"
 }
 __prompt_command() {
     local STATUS="$?"
