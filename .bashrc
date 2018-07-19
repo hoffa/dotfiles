@@ -46,7 +46,7 @@ if [[ $(uname) = "Darwin" ]]; then
     alias brewsky='brew update && brew upgrade && brew cleanup && brew prune; brew doctor'
     alias i='cd ~/Cloud'
     alias l='ls -lAhFT'
-    alias note='vim +"r!date" ~/Cloud/Notes.md'
+    alias note='vim "+r!date" "+normal i# " ~/Cloud/Notes.md'
 else
     alias l='ls -lAhF --color'
 fi
