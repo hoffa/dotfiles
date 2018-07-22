@@ -13,21 +13,21 @@ set number
 set listchars=trail:·,tab:»·,eol:¬,nbsp:% " Characters to display when using :list
 set backspace=indent,eol,start
 
-filetype indent on " Use filetype-specific indenting
-set autoindent " Indent when starting new line
-set expandtab " Use spaces instead of tabs
-set shiftwidth=4 " Spaces when reindenting
-set softtabstop=4 " Spaces when hitting tab
-set tabstop=4 " Visual spaces per tab
+filetype indent on
+set autoindent
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 
-set showmatch " Highlight matching bracket
-set incsearch " Search as characters are entered
-set hlsearch " Highlight search results
+set showmatch
+set incsearch
+set hlsearch
 set ignorecase
 
-set laststatus=2 " Always show status line
-set showcmd " Show last command in bottom bar
-set wildmenu " Enable better command line completion
+set laststatus=2
+set showcmd
+set wildmenu
 
 set lazyredraw
 set ttyfast
