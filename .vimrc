@@ -64,6 +64,7 @@ nnoremap <CR> :nohl<CR>
 nnoremap <Leader>z :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 nnoremap <Leader>q :q<CR>
+nnoremap <Leader>x :q!<CR>
 nnoremap <Leader>w :w!<CR>
 nnoremap <Leader><Space> <C-W>w
 nnoremap <Leader>n :bnext<CR>
