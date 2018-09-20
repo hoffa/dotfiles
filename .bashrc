@@ -19,7 +19,7 @@ alias a='rg --smart-case --ignore-file ~/.gitignore_global'
 alias c='( while [ ! -d .git ]; do cd ..; done; echo "😻 generating ctags in $(pwd)"; ctags -R )'
 alias d='colordiff -u'
 alias ha='history | rg'
-alias pyg='pygmentize'
+alias p='pygmentize'
 alias t2d='date -ur'
 alias t='date +%s'
 
