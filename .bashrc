@@ -5,6 +5,14 @@ OFF="\e[0m"
 
 f() { find . -iname "*$1*"; }
 g() { grep -RHn --color=auto --exclude-dir=.git "$1" .; }
+note() {
+    (
+        cd ~/code/sync
+        git-sync
+        vim -c 'r!date' -c 'normal i# ' -c 'normal 2o' -c 'normal O' notes.md
+        git-sync
+    )
+}
 
 export CLICOLOR=1
 export VISUAL=vim
@@ -48,7 +56,6 @@ if [[ $(uname) = "Darwin" ]]; then
     alias brewsky='brew update && brew upgrade && brew cleanup && brew prune; brew doctor'
     alias i='cd ~/Cloud'
     alias l='ls -lAhFT'
-    alias note="vim -c 'r!date' -c 'normal i# ' -c 'normal 2o' -c 'normal O' ~/Library/Mobile\ Documents/com~apple~CloudDocs/Notes.md"
 else
     alias l='ls -lAhF --color'
 fi
