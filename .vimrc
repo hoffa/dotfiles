@@ -50,7 +50,7 @@ hi PreProc ctermfg=4
 hi Statement ctermfg=3
 hi Identifier ctermfg=6
 
-hi StatusLine cterm=reverse ctermfg=4
+hi StatusLine cterm=reverse ctermfg=2 ctermbg=0
 
 set pastetoggle=<F2>
 
