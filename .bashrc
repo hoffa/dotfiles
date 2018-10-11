@@ -30,6 +30,7 @@ alias ha='history | rg'
 alias p='pygmentize'
 alias t2d='date -ur'
 alias t='date +%s'
+alias server='python3 -m http.server'
 
 alias ga='git add'
 alias gba='git branch -a'
