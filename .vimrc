@@ -39,19 +39,6 @@ set statusline+=%{&ft}\
 set statusline+=%{&ff}\ 
 set statusline+=%{(&fenc!=''?&fenc:&enc)}\ 
 
-hi LineNr ctermfg=8
-hi Comment ctermfg=8
-hi NonText ctermfg=8
-hi Search ctermfg=0
-hi Special ctermfg=5
-hi Constant ctermfg=1
-hi Type ctermfg=2
-hi PreProc ctermfg=4
-hi Statement ctermfg=3
-hi Identifier ctermfg=6
-
-hi StatusLine cterm=reverse ctermfg=2 ctermbg=0
-
 set pastetoggle=<F2>
 
 noremap <Up> <C-U>
