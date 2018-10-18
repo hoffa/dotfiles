@@ -32,7 +32,8 @@ set wildmenu
 set lazyredraw
 set ttyfast
 
-set statusline+=\ %f\ 
+set statusline+=\ %n\ 
+set statusline+=%f
 set statusline+=%<%=
 set statusline+=%l:%c\ 
 set statusline+=%{&ft}\ 
@@ -41,8 +42,8 @@ set statusline+=%{(&fenc!=''?&fenc:&enc)}\
 
 set pastetoggle=<F2>
 
-noremap <Up> <C-U>
-noremap <Down> <C-D>
+noremap <Up> <Nop>
+noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> :set list!<CR>
 nnoremap <CR> :nohl<CR>
@@ -56,10 +57,8 @@ nnoremap <Leader>w :w!<CR>
 nnoremap <Leader><Space> <C-W>w
 nnoremap <Leader>n :bnext<CR>
 nnoremap <Leader>p :bprev<CR>
-nnoremap <Leader>b :Vexplore<CR>
+nnoremap <Leader>b :Vex<CR>
 
 let g:netrw_winsize=20
 let g:netrw_browse_split=4
 let g:netrw_liststyle=3
-let g:netrw_altv=1
-let g:netrw_banner=0
