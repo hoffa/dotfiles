@@ -27,7 +27,7 @@ nnoremap <CR> :nohl<CR>
 set laststatus=2
 set showcmd
 set wildmenu
-set statusline=\ %n\ %f\ %m%r%<%=%l:%c\ %y\ %{&ff}\ %{(&fenc!=''?&fenc:&enc)}\ 
+set statusline=%n\ %f\ %m%r%<%=%l:%c\ %y\ %{&ff}\ %{(&fenc!=''?&fenc:&enc)}
 
 set lazyredraw
 set ttyfast
