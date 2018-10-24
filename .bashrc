@@ -37,7 +37,6 @@ alias gba='git branch -a'
 alias gcam='git commit -am'
 alias gcgrep='git rev-list --all | xargs git grep'
 alias gcm='git commit -m'
-alias gcr='git clone --recursive'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias gdwd='git diff --word-diff'
@@ -55,14 +54,12 @@ alias gu='git remote -v'
 
 if [[ $(uname) = "Darwin" ]]; then
     alias brewsky='brew update && brew upgrade && brew cleanup && brew prune; brew doctor'
-    alias i='cd ~/Cloud'
     alias l='ls -lAhFT'
 else
     alias l='ls -lAhF --color'
 fi
 
 HISTTIMEFORMAT='%F %T '
-HISTCONTROL=ignoredups:erasedups
 HISTSIZE=100000
 HISTFILESIZE=100000
 shopt -s histappend
