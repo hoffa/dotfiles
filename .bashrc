@@ -28,7 +28,7 @@ alias d='colordiff -u'
 alias g='grep -FHIRin --color=auto --exclude-dir=.git'
 alias ha='history | rg'
 alias p='pygmentize'
-alias server='python -m SimpleHTTPServer'
+alias server='python -m SimpleHTTPServer 80'
 alias t2d='date -ur'
 alias t='date +%s'
 
