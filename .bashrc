@@ -4,7 +4,6 @@ BLUE="\e[34m"
 OFF="\e[0m"
 
 f() { find . -iname "*$1*"; }
-g() { grep -RHn --color=auto --exclude-dir=.git "$1" .; }
 note() {
     (
         cd ~/code/sync
@@ -26,11 +25,12 @@ alias .....='cd ../../../..'
 alias a='rg --smart-case --ignore-file ~/.gitignore_global'
 alias c='( while [ ! -d .git ]; do cd ..; done; echo "😻 generating ctags in $(pwd)"; ctags -R )'
 alias d='colordiff -u'
+alias g='grep -FHIRin --color=auto --exclude-dir=.git'
 alias ha='history | rg'
 alias p='pygmentize'
+alias server='python3 -m http.server'
 alias t2d='date -ur'
 alias t='date +%s'
-alias server='python3 -m http.server'
 
 alias ga='git add'
 alias gba='git branch -a'
