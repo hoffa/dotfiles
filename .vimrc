@@ -4,7 +4,7 @@
 set nocompatible
 set encoding=utf-8
 set listchars=trail:·,tab:»·,eol:¬,nbsp:% " Characters to display when using :list
-set backspace=indent,eol,start
+set backspace=indent,eol,start " Why would you not want this?
 set tags=tags;/
 set number
 set lazyredraw
@@ -37,6 +37,8 @@ nnoremap <Up> :set list!<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>x :q!<CR>
 nnoremap <Leader>w :w!<CR>
+nnoremap <Leader>m :set nonumber laststatus=1 \| syntax off<CR>
+
 " https://vi.stackexchange.com/questions/454/whats-the-simplest-way-to-strip-trailing-whitespace-from-all-lines-in-a-file
 nnoremap <Leader>z :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
