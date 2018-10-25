@@ -22,7 +22,6 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias a='rg --smart-case --ignore-file ~/.gitignore_global'
 alias c='( while [ ! -d .git ]; do cd ..; done; echo "😻 generating ctags in $(pwd)"; ctags -R )'
 alias d='colordiff -u'
 alias g='grep -FHIRin --color=auto --exclude-dir=.git'
