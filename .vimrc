@@ -55,6 +55,7 @@ nnoremap <Leader><Space> <C-w>w
 " Buffers
 nnoremap <Leader>n :bnext<CR>
 nnoremap <Leader>p :bprev<CR>
+nnoremap <Leader>l :ls<CR>
 
 " Netrw
 nnoremap <Leader>b :Vex<CR>
