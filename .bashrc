@@ -1,5 +1,6 @@
 RED="\e[31m"
 GREEN="\e[32m"
+YELLOW="\e[33m"
 BLUE="\e[34m"
 OFF="\e[0m"
 
@@ -7,19 +8,19 @@ f() { find . -iname "*$1*"; }
 note() {
     (
         set -e
-        echo "🌀 pulling..."
         cd ~/code/sync
+        printf "🌀 ${BLUE}just a sec, pulling changes...${OFF}\n"
         git pull --rebase
-        oldsize=$(wc < notes.md)
+        local oldwc=$(wc < notes.md)
         vim -c 'r!date' -c 'normal i# ' -c 'normal 2o' -c 'normal O' notes.md
-        newsize=$(wc < notes.md)
-        if [ "$oldsize" = "$newsize" ]; then
-            echo "✅ no changes ¯\_(ツ)_/¯"
+        local newwc=$(wc < notes.md)
+        if [ "$oldwc" = "$newwc" ]; then
+            printf "🐣 ${YELLOW}no changes ¯\_(ツ)_/¯${OFF}\n"
         else
-            echo "🌀 pushing..."
-            git commit -am ":cyclone: $newsize $(hostname)"
+            printf "🌀 ${BLUE}ok, syncing back...${OFF}\n"
+            git commit -am ":cyclone: $newwc $(hostname)"
             git push -u origin master
-            echo "✅ done!"
+            printf "✅ ${GREEN}done!${OFF}\n"
         fi
     )
 }
@@ -36,8 +37,7 @@ alias .....='cd ../../../..'
 alias c='( while [ ! -d .git ]; do cd ..; done; echo "😻 generating ctags in $(pwd)"; ctags -R )'
 alias d='colordiff -u'
 alias g='grep -FHIRin --color=auto --exclude-dir=.git'
-alias ha='history | rg'
-alias p='pygmentize'
+alias ha='history | grep'
 alias server='python -m SimpleHTTPServer 80'
 alias t2d='date -ur'
 alias t='date +%s'
@@ -62,7 +62,7 @@ alias gsubcheckout='git submodule foreach --recursive git checkout .'
 alias gsubupdate='git submodule update --recursive --init'
 alias gu='git remote -v'
 
-if [[ $(uname) = "Darwin" ]]; then
+if [ "$(uname)" = "Darwin" ]; then
     alias brewsky='brew update && brew upgrade && brew cleanup && brew prune; brew doctor'
     alias l='ls -lAhFT'
 else
