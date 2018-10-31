@@ -7,9 +7,14 @@ f() { find . -iname "*$1*"; }
 note() {
     (
         cd ~/code/sync
-        git-sync
+        git pull --rebase
+        size=$(wc notes.md)
         vim -c 'r!date' -c 'normal i# ' -c 'normal 2o' -c 'normal O' notes.md
-        git-sync
+        if [ "$size" != "$(wc notes.md)" ]; then
+            git add notes.md
+            git commit -m ':cyclone:'
+            git push -u origin master
+        fi
     )
 }
 
