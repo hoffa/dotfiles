@@ -6,14 +6,20 @@ OFF="\e[0m"
 f() { find . -iname "*$1*"; }
 note() {
     (
+        set -e
+        echo "🌀 pulling..."
         cd ~/code/sync
         git pull --rebase
-        size=$(wc notes.md)
+        oldsize=$(wc < notes.md)
         vim -c 'r!date' -c 'normal i# ' -c 'normal 2o' -c 'normal O' notes.md
-        if [ "$size" != "$(wc notes.md)" ]; then
-            git add notes.md
-            git commit -m ':cyclone:'
+        newsize=$(wc < notes.md)
+        if [ "$oldsize" = "$newsize" ]; then
+            echo "✅ no changes ¯\_(ツ)_/¯"
+        else
+            echo "🌀 pushing..."
+            git commit -am ":cyclone: $newsize $(hostname)"
             git push -u origin master
+            echo "✅ done!"
         fi
     )
 }
