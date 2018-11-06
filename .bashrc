@@ -66,7 +66,7 @@ alias gsubupdate='git submodule update --recursive --init'
 alias gu='git remote -v'
 
 if [ "$(uname)" = "Darwin" ]; then
-    alias brewsky='brew update && brew upgrade && brew cleanup && brew prune; brew doctor'
+    alias brewsky='brew update && brew upgrade && brew cleanup && brew prune; brew doctor; npm update -g'
     alias l='ls -lAhFT'
 else
     alias l='ls -lAhF --color'
