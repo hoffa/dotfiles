@@ -14,7 +14,6 @@ note() {
         git pull --rebase
         vim -c 'r!date' -c 'normal i# ' -c 'normal 2o' -c 'normal O' notes.md
         printf "💅 ${MAGENTA}making it pretty...${OFF}\n"
-        prettier notes.md | colordiff -u notes.md - || true
         prettier --write notes.md
         printf "🌀 ${BLUE}checking for any differences...${OFF}\n"
         if git diff --exit-code; then
