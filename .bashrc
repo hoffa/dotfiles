@@ -2,6 +2,7 @@ RED="\e[31m"
 GREEN="\e[32m"
 YELLOW="\e[33m"
 BLUE="\e[34m"
+MAGENTA="\e[35m"
 OFF="\e[0m"
 
 f() { find . -iname "*$1*"; }
@@ -13,6 +14,9 @@ note() {
         git pull --rebase
         local oldwc=$(wc < notes.md)
         vim -c 'r!date' -c 'normal i# ' -c 'normal 2o' -c 'normal O' notes.md
+        printf "💅 ${MAGENTA}making it pretty...${OFF}\n"
+        prettier notes.md | colordiff -u notes.md - || true
+        prettier --write notes.md
         local newwc=$(wc < notes.md)
         if [ "$oldwc" = "$newwc" ]; then
             printf "🐣 ${YELLOW}no changes ¯\_(ツ)_/¯${OFF}\n"
