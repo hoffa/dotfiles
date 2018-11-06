@@ -12,16 +12,15 @@ note() {
         cd ~/code/sync
         printf "🌀 ${BLUE}just a sec, pulling changes...${OFF}\n"
         git pull --rebase
-        local oldwc=$(wc < notes.md)
         vim -c 'r!date' -c 'normal i# ' -c 'normal 2o' -c 'normal O' notes.md
         printf "💅 ${MAGENTA}making it pretty...${OFF}\n"
         prettier notes.md | colordiff -u notes.md - || true
         prettier --write notes.md
-        local newwc=$(wc < notes.md)
-        if [ "$oldwc" = "$newwc" ]; then
+        printf "🌀 ${BLUE}checking for any differences...${OFF}\n"
+        if git diff --exit-code; then
             printf "🐣 ${YELLOW}no changes ¯\_(ツ)_/¯${OFF}\n"
         else
-            printf "🌀 ${BLUE}ok, syncing back...${OFF}\n"
+            printf "🌀 ${BLUE}syncing back...${OFF}\n"
             git commit -am ":cyclone: $newwc $(hostname)"
             git push -u origin master
             printf "✅ ${GREEN}done!${OFF}\n"
