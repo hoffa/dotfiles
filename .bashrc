@@ -5,7 +5,10 @@ BLUE="\e[34m"
 MAGENTA="\e[35m"
 OFF="\e[0m"
 
-f() { find . -iname "*$1*"; }
+f() {
+    find . -iname "*$1*"
+}
+
 note() {
     (
         set -e
@@ -27,6 +30,28 @@ note() {
     )
 }
 
+brewsky() {
+    (
+        set -x
+        brew update
+        brew upgrade
+        brew cleanup
+        brew prune
+        brew doctor
+        npm update -g
+    )
+}
+
+c() {
+    (
+        while [ ! -d .git ]; do
+            cd ..
+        done
+        echo "😻 generating ctags in $(pwd)"
+        ctags -R
+    )
+}
+
 export CLICOLOR=1
 export VISUAL=vim
 export EDITOR=vim
@@ -36,7 +61,6 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias c='( while [ ! -d .git ]; do cd ..; done; echo "😻 generating ctags in $(pwd)"; ctags -R )'
 alias d='colordiff -u'
 alias g='grep -FHIRin --color=auto --exclude-dir=.git'
 alias hg='history | grep'
@@ -61,12 +85,10 @@ alias gpoh='git push -u origin HEAD'
 alias grm='git rm'
 alias gs='git status'
 alias gsh='git show'
-alias gsubcheckout='git submodule foreach --recursive git checkout .'
-alias gsubupdate='git submodule update --recursive --init'
+alias gsubreset='git submodule foreach --recursive git checkout . && git submodule update --recursive --init'
 alias gu='git remote -v'
 
 if [ "$(uname)" = "Darwin" ]; then
-    alias brewsky='brew update && brew upgrade && brew cleanup && brew prune; brew doctor; npm update -g'
     alias l='ls -lAhFT'
 else
     alias l='ls -lAhF --color'
@@ -78,9 +100,9 @@ HISTFILESIZE=100000
 shopt -s histappend
 shopt -s checkwinsize
 
-__smiley() { [ "$1" = "0" ] && printf "${GREEN}✓${OFF}" || printf "${RED}$1${OFF}"; }
+__smiley() { [ "$1" -eq 0 ] && printf "${GREEN}✓${OFF}" || printf "${RED}$1${OFF}"; }
 __git_branch() {
-    branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+    local branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
     [ ! -z "${branch}" ] && printf " $RED${branch}$OFF"
 }
 __prompt_command() {
