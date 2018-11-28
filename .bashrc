@@ -100,7 +100,7 @@ HISTFILESIZE=100000
 shopt -s histappend
 shopt -s checkwinsize
 
-__smiley() { [ "$1" -eq 0 ] && printf "${GREEN}✓${OFF}" || printf "${RED}$1${OFF}"; }
+__smiley() { [ "$1" -eq 0 ] && printf "${GREEN}:)${OFF}" || printf "${RED}$1${OFF}"; }
 __git_branch() {
     local branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
     [ ! -z "${branch}" ] && printf " $RED${branch}$OFF"
