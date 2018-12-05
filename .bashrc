@@ -39,6 +39,7 @@ brewsky() {
         brew prune
         brew doctor
         npm update -g
+        npm doctor
     )
 }
 
