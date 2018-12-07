@@ -40,6 +40,7 @@ brewsky() {
         brew doctor
         npm update -g
         npm doctor
+        pip3 list --outdated
     )
 }
 
