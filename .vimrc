@@ -37,7 +37,6 @@ nnoremap <Up> :set list!<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>x :q!<CR>
 nnoremap <Leader>w :w!<CR>
-nnoremap <Leader>m :set nonumber laststatus=1 \| syntax off<CR>
 
 " https://vi.stackexchange.com/questions/454/whats-the-simplest-way-to-strip-trailing-whitespace-from-all-lines-in-a-file
 nnoremap <Leader>z :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
