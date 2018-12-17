@@ -33,13 +33,22 @@ note() {
 brewsky() {
     (
         set -x
+
         brew update
         brew upgrade
         brew cleanup
         brew prune
         brew doctor
+
+        npm update -g npm
         npm update -g
         npm doctor
+
+        gem update --system
+        gem update
+        gem cleanup
+
+        pip3 install --upgrade pip
         pip3 list --outdated
     )
 }
