@@ -48,6 +48,9 @@ brewsky() {
         gem update
         gem cleanup
 
+        pip2 install --upgrade pip
+        pip2 list --outdated
+
         pip3 install --upgrade pip
         pip3 list --outdated
     )
