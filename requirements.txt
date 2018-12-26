@@ -1,0 +1,14 @@
+black
+bokeh
+flake8
+kitten
+lv
+matplotlib
+numpy
+pip
+pygments
+pylint
+requests
+setuptools
+twine
+wheel
