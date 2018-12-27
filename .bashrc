@@ -23,7 +23,7 @@ note() {
             printf "🐣 ${YELLOW}no changes ¯\_(ツ)_/¯${OFF}\n"
         else
             printf "🌀 ${BLUE}syncing back...${OFF}\n"
-            git commit -am ":cyclone: $newwc $(hostname)"
+            git commit -am ":cyclone: $(hostname)"
             git push -u origin master
             printf "✅ ${GREEN}done!${OFF}\n"
         fi
