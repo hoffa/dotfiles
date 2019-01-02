@@ -11,7 +11,6 @@ f() {
 
 note() {
     (
-        set -e
         cd ~/code/sync
         printf "🌀 ${BLUE}just a sec, pulling changes...${OFF}\n"
         git pull --rebase
@@ -24,8 +23,11 @@ note() {
         else
             printf "🌀 ${BLUE}syncing back...${OFF}\n"
             git commit -am ":cyclone: $(hostname)"
-            git push -u origin master
-            printf "✅ ${GREEN}done!${OFF}\n"
+            if git push -u origin master; then
+                printf "✅ ${GREEN}done!${OFF}\n"
+            else
+                printf "👀 ${YELLOW} remember to push once connected${OFF}\n"
+            fi
         fi
     )
 }
