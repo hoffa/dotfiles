@@ -38,7 +38,6 @@ brewsky() {
 
         brew update
         brew upgrade
-        brew cleanup
         brew doctor
 
         npm update -g npm
@@ -63,6 +62,7 @@ c() {
     )
 }
 
+export HOMEBREW_INSTALL_CLEANUP=1
 export CLICOLOR=1
 export VISUAL=vim
 export EDITOR=vim
