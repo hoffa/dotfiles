@@ -5,10 +5,6 @@ BLUE="\e[34m"
 MAGENTA="\e[35m"
 OFF="\e[0m"
 
-f() {
-    find . -iname "*$1*"
-}
-
 note() {
     (
         cd ~/code/sync
@@ -101,9 +97,11 @@ alias gu='git remote -v'
 if [ "$(uname)" = "Darwin" ]; then
     alias l='ls -lAhFT'
     alias g='rg -Fi'
+    alias f='fd -HF'
 else
     alias l='ls -lAhF --color'
     alias g='grep -FHIRin'
+    f() { find . -iname "*$1*"; }
 fi
 
 HISTTIMEFORMAT='%F %T '

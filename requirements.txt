@@ -6,7 +6,6 @@ lv
 matplotlib
 numpy
 pip
-pygments
 pylint
 requests
 setuptools
