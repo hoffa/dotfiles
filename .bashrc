@@ -70,9 +70,7 @@ alias .....='cd ../../../..'
 
 alias d='colordiff -u'
 alias hg='history | grep'
-alias psg='ps aux | grep'
 alias server='python -m SimpleHTTPServer 80'
-alias t2d='date -ur'
 alias t='date +%s'
 
 alias ga='git add'
