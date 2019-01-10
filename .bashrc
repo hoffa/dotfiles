@@ -73,7 +73,6 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 alias d='colordiff -u'
-alias g='grep -FHIRin --color=auto --exclude-dir=.git'
 alias hg='history | grep'
 alias psg='ps aux | grep'
 alias server='python -m SimpleHTTPServer 80'
@@ -101,8 +100,10 @@ alias gu='git remote -v'
 
 if [ "$(uname)" = "Darwin" ]; then
     alias l='ls -lAhFT'
+    alias g='rg -Fi'
 else
     alias l='ls -lAhF --color'
+    alias g='grep -FHIRin'
 fi
 
 HISTTIMEFORMAT='%F %T '
