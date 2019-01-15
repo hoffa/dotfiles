@@ -108,7 +108,6 @@ HISTTIMEFORMAT='%F %T '
 HISTSIZE=100000
 HISTFILESIZE=100000
 shopt -s histappend
-shopt -s checkwinsize
 
 __smiley() { [ "$1" -eq 0 ] && printf "${GREEN}:)${OFF}" || printf "${RED}$1${OFF}"; }
 __git_branch() {
