@@ -96,6 +96,8 @@ if [ "$(uname)" = "Darwin" ]; then
     alias l='ls -lAhFT'
     alias g='rg -Fi'
     alias f='fd -HF'
+
+    fortune -s | cowsay -y -f small
 else
     alias l='ls -lAhF --color'
     alias g='grep -FHIRin'
