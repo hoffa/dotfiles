@@ -96,6 +96,7 @@ if [ "$(uname)" = "Darwin" ]; then
     alias l='ls -lAhFT'
     alias g='rg -Fi'
     alias f='fd -HF'
+    alias cloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 
     fortune -s | cowsay -y -f small
 else
