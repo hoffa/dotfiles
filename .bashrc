@@ -1,21 +1,21 @@
 note() {
     (
         cd ~/code/sync
-        printf "🌀 just a sec, pulling changes...\n"
+        echo "🌀 just a sec, pulling changes..."
         git pull --rebase
         vim -c 'r!date' -c 'normal i# ' -c 'normal 2o' -c 'normal O' notes.md
-        printf "💅 making it pretty...\n"
+        echo "💅 making it pretty..."
         prettier --write notes.md
-        printf "🌀 checking for any differences...\n"
+        echo "🌀 checking for any differences..."
         if git diff --exit-code; then
-            printf "🐣 no changes ¯\_(ツ)_/¯\n"
+            echo "🐣 no changes ¯\_(ツ)_/¯"
         else
-            printf "🌀 syncing back...\n"
+            echo "🌀 syncing back..."
             git commit -am ":cyclone: $(hostname)"
             if git push -u origin master; then
-                printf "✅ done!\n"
+                echo "✅ done!!"
             else
-                printf "👀 remember to push once connected\n"
+                echo "👀 remember to push once connected"
             fi
         fi
     )
@@ -101,13 +101,11 @@ HISTSIZE=100000
 HISTFILESIZE=100000
 shopt -s histappend
 
-__smiley() { [ "$1" -ne 0 ] && printf "\e[31m$1$\e[0m"; }
-__git_branch() {
-    local branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
-    [ ! -z "${branch}" ] && printf " (${branch})"
-}
 __prompt_command() {
-    local STATUS="$?"
-    PS1="\u@\h:\w\$(__git_branch) \$(__smiley $STATUS)\n\$ "
+    local status=$?
+    [ "$status" -ne 0 ] && printf "\e[31mexit: $status\e[0m\n"
+    PS1="\u@\h \w"
+    PS1="$PS1 $(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
+    PS1="$PS1\n\$ "
 }
 PROMPT_COMMAND=__prompt_command
