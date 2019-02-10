@@ -1,28 +1,21 @@
-RED="\e[31m"
-GREEN="\e[32m"
-YELLOW="\e[33m"
-BLUE="\e[34m"
-MAGENTA="\e[35m"
-OFF="\e[0m"
-
 note() {
     (
         cd ~/code/sync
-        printf "🌀 ${BLUE}just a sec, pulling changes...${OFF}\n"
+        printf "🌀 just a sec, pulling changes...\n"
         git pull --rebase
         vim -c 'r!date' -c 'normal i# ' -c 'normal 2o' -c 'normal O' notes.md
-        printf "💅 ${MAGENTA}making it pretty...${OFF}\n"
+        printf "💅 making it pretty...\n"
         prettier --write notes.md
-        printf "🌀 ${BLUE}checking for any differences...${OFF}\n"
+        printf "🌀 checking for any differences...\n"
         if git diff --exit-code; then
-            printf "🐣 ${YELLOW}no changes ¯\_(ツ)_/¯${OFF}\n"
+            printf "🐣 no changes ¯\_(ツ)_/¯\n"
         else
-            printf "🌀 ${BLUE}syncing back...${OFF}\n"
+            printf "🌀 syncing back...\n"
             git commit -am ":cyclone: $(hostname)"
             if git push -u origin master; then
-                printf "✅ ${GREEN}done!${OFF}\n"
+                printf "✅ done!\n"
             else
-                printf "👀 ${YELLOW} remember to push once connected${OFF}\n"
+                printf "👀 remember to push once connected\n"
             fi
         fi
     )
@@ -97,8 +90,6 @@ if [ "$(uname)" = "Darwin" ]; then
     alias g='rg -Fi'
     alias f='fd -HF'
     alias cloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
-
-    fortune -s | cowsay -y -f small
 else
     alias l='ls -lAhF --color'
     alias g='grep -FHIRin'
@@ -110,13 +101,13 @@ HISTSIZE=100000
 HISTFILESIZE=100000
 shopt -s histappend
 
-__smiley() { [ "$1" -eq 0 ] && printf "${GREEN}:)${OFF}" || printf "${RED}$1${OFF}"; }
+__smiley() { [ "$1" -ne 0 ] && printf "\e[31m$1$\e[0m"; }
 __git_branch() {
     local branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
-    [ ! -z "${branch}" ] && printf " $RED${branch}$OFF"
+    [ ! -z "${branch}" ] && printf " (${branch})"
 }
 __prompt_command() {
     local STATUS="$?"
-    PS1="$BLUE\u$OFF at $RED\h$OFF in $BLUE\w$OFF\$(__git_branch) \$(__smiley $STATUS) \n\$ "
+    PS1="\u@\h:\w\$(__git_branch) \$(__smiley $STATUS)\n\$ "
 }
 PROMPT_COMMAND=__prompt_command
