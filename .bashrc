@@ -101,11 +101,5 @@ HISTSIZE=100000
 HISTFILESIZE=100000
 shopt -s histappend
 
-__prompt_command() {
-    local status=$?
-    [ "$status" -ne 0 ] && printf "\e[31mexit: $status\e[0m\n"
-    PS1="\u@\h \w"
-    PS1="$PS1 $(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
-    PS1="$PS1\n\$ "
-}
-PROMPT_COMMAND=__prompt_command
+PROMPT_COMMAND='rc=$?; [ $rc -ne 0 ] && printf "\e[31mexit: $rc\e[0m\n"'
+PS1='\u@\h \w $(git rev-parse --abbrev-ref HEAD 2> /dev/null)\n\$ '
