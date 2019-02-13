@@ -53,6 +53,7 @@ c() {
 
 export HOMEBREW_INSTALL_CLEANUP=1
 export CLICOLOR=1
+export LSCOLORS=ExfxbxdxCxegedabagacad
 export VISUAL=vim
 export EDITOR=vim
 
