@@ -3,8 +3,8 @@
 
 set nocompatible
 set encoding=utf-8
-set listchars=trail:·,tab:»·,eol:¬,nbsp:% " Characters to display when using :list
-set backspace=indent,eol,start " Why would you not want this?
+set listchars=trail:·,tab:»·,eol:¬
+set backspace=indent,eol,start
 set tags=tags;/
 set lazyredraw
 set ttyfast
