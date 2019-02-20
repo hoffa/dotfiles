@@ -6,7 +6,6 @@ set encoding=utf-8
 set listchars=trail:·,tab:»·,eol:¬,nbsp:% " Characters to display when using :list
 set backspace=indent,eol,start " Why would you not want this?
 set tags=tags;/
-set number
 set lazyredraw
 set ttyfast
 syntax on
@@ -27,9 +26,7 @@ nnoremap <CR> :nohl<CR>
 
 " Status stuff
 set laststatus=2
-set showcmd
-set wildmenu
-set statusline=%f\ %m%r%<%=%l:%c\ %y\ %{&ff}\ %{(&fenc!=''?&fenc:&enc)}
+set statusline=%f\ %m%r%<%=%l:%c\ %P\ %y\ %{&ff}\ %{(&fenc?&fenc:&enc)}
 
 " Basics
 set pastetoggle=<Down>
