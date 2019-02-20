@@ -31,6 +31,7 @@ set statusline=%f\ %m%r%<%=%l:%c\ %P\ %y\ %{&ff}\ %{(&fenc?&fenc:&enc)}
 " Basics
 set pastetoggle=<Down>
 nnoremap <Up> :set list!<CR>
+nnoremap <Left> :set nu!<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>x :q!<CR>
 nnoremap <Leader>w :w!<CR>
@@ -40,7 +41,6 @@ nnoremap <Leader>z :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " Tabs
 nnoremap <Leader>t :tabnew<CR>
-nnoremap <Left> :tabprevious<CR>
 nnoremap <Right> :tabnext<CR>
 
 " Windows
