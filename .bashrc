@@ -28,6 +28,7 @@ brewsky() {
         brew update
         brew upgrade
         brew doctor
+        brew cleanup
 
         npm update -g npm
         npm update -g
@@ -51,7 +52,6 @@ c() {
     )
 }
 
-export HOMEBREW_INSTALL_CLEANUP=1
 export CLICOLOR=1
 export LSCOLORS=ExfxbxdxCxegedabagacad
 export VISUAL=vim
@@ -66,6 +66,8 @@ alias d='colordiff -u'
 alias hg='history | grep'
 alias server='python -m SimpleHTTPServer 80'
 alias t='date +%s'
+alias l='ls -AF'
+alias ll='ls -AFlh'
 
 alias ga='git add'
 alias gba='git branch -a'
@@ -87,12 +89,10 @@ alias gsubreset='git submodule foreach --recursive git checkout . && git submodu
 alias gu='git remote -v'
 
 if [ "$(uname)" = "Darwin" ]; then
-    alias l='ls -lAhFT'
     alias g='rg -Fi'
     alias f='fd -HF'
     alias cloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 else
-    alias l='ls -lAhF --color'
     alias g='grep -FHIRin'
     f() { find . -iname "*$1*"; }
 fi
