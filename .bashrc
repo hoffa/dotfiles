@@ -1,21 +1,18 @@
 note() {
     (
         cd ~/code/sync
-        echo "🌀 just a sec, pulling changes..."
+        echo "==> pulling"
         git pull --rebase
         vim -c 'r!date' -c 'normal i# ' -c 'normal 2o' -c 'normal O' notes.md
-        echo "💅 making it pretty..."
-        prettier --write notes.md
-        echo "🌀 checking for any differences..."
         if git diff --exit-code; then
-            echo "🐣 no changes ¯\_(ツ)_/¯"
+            echo "==> no changes"
         else
-            echo "🌀 syncing back..."
-            git commit -am ":cyclone: $(hostname)"
+            echo "==> prettifying"
+            prettier --write notes.md
+            echo "==> pushing"
+            git commit -am "$(hostname)"
             if git push -u origin master; then
-                echo "✅ done!!"
-            else
-                echo "👀 remember to push once connected"
+                echo "==> done"
             fi
         fi
     )
