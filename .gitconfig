@@ -10,3 +10,20 @@
 
 [difftool]
     prompt = false
+
+[alias]
+    a = add
+    ba = branch -a
+    cam = commit -am
+    cm = commit -m
+    d = diff
+    ds = diff --staged
+    dwd = diff --word-diff
+    l = log
+    lg = log --graph --oneline
+    p = pull
+    poh = push -u origin HEAD
+    pr = pull --rebase
+    s = status
+    sh = show
+    u = remote -v

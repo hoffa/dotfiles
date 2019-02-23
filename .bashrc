@@ -53,7 +53,7 @@ f() {
     find . -iname "*$1*"
 }
 
-g() {
+a() {
     grep --color -FHIRin "$1" .
 }
 
@@ -70,29 +70,14 @@ alias .....='cd ../../../..'
 alias cloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias d='colordiff -u'
 alias hg='history | grep'
-alias server='python -m SimpleHTTPServer 80'
-alias t='date +%s'
 alias l='ls -AF'
 alias ll='ls -AFlh'
+alias server='python -m SimpleHTTPServer 80'
+alias t='date +%s'
 
-alias ga='git add'
-alias gba='git branch -a'
-alias gcam='git commit -am'
+alias g='git'
 alias gcgrep='git rev-list --all | xargs git grep'
-alias gcm='git commit -m'
-alias gd='git diff'
-alias gds='git diff --staged'
-alias gdwd='git diff --word-diff'
-alias gl='git log'
-alias glg='git log --graph --oneline'
-alias gmv='git mv'
-alias gp='git pull'
-alias gpoh='git push -u origin HEAD'
-alias grm='git rm'
-alias gs='git status'
-alias gsh='git show'
 alias gsubreset='git submodule foreach --recursive git checkout . && git submodule update --recursive --init'
-alias gu='git remote -v'
 
 HISTTIMEFORMAT='%F %T '
 HISTSIZE=100000
