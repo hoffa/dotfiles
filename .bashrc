@@ -49,6 +49,14 @@ c() {
     )
 }
 
+f() {
+    find . -iname "*$1*"
+}
+
+g() {
+    grep --color -FHIRin "$1" .
+}
+
 export CLICOLOR=1
 export LSCOLORS=ExfxbxdxCxegedabagacad
 export VISUAL=vim
@@ -59,6 +67,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+alias cloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias d='colordiff -u'
 alias hg='history | grep'
 alias server='python -m SimpleHTTPServer 80'
@@ -84,15 +93,6 @@ alias gs='git status'
 alias gsh='git show'
 alias gsubreset='git submodule foreach --recursive git checkout . && git submodule update --recursive --init'
 alias gu='git remote -v'
-
-if [ "$(uname)" = "Darwin" ]; then
-    alias g='rg -Fi'
-    alias f='fd -HF'
-    alias cloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
-else
-    alias g='grep -FHIRin'
-    f() { find . -iname "*$1*"; }
-fi
 
 HISTTIMEFORMAT='%F %T '
 HISTSIZE=100000
