@@ -20,7 +20,7 @@
     ds = diff --staged
     dwd = diff --word-diff
     l = log
-    lg = log --graph --oneline
+    lg = log --graph --pretty=format:'%C(yellow)%h%C(reset) %C(blue)(%cr)%C(reset)%C(bold red)%d%C(reset) %s %C(green)(%an)%C(reset)'
     p = pull
     poh = push -u origin HEAD
     pr = pull --rebase
