@@ -47,6 +47,10 @@ a() {
     grep --color -FHIRin "$1" .
 }
 
+d() {
+    colordiff -u "$1" "$2" | less -rFX
+}
+
 export CLICOLOR=1
 export LSCOLORS=ExfxbxdxCxegedabagacad
 export VISUAL=vim
@@ -58,7 +62,6 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 alias cloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
-alias d='colordiff -u'
 alias hg='history | grep'
 alias l='ls -AF'
 alias ll='ls -AFlh'
