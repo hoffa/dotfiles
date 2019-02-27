@@ -48,12 +48,11 @@ a() {
 }
 
 d() {
-    colordiff -u "$1" "$2" | less -rFX
+    colordiff -u "$1" "$2" | less -RFX
 }
 
-export LSCOLORS=ExfxbxdxCxegedabagacad
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=vi
+export EDITOR=vi
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -62,12 +61,13 @@ alias .....='cd ../../../..'
 
 alias hg='history | grep'
 alias t='date +%s'
-
 alias g='git'
+
 alias gcgrep='git rev-list --all | xargs git grep'
 alias gsubreset='git submodule foreach --recursive git checkout . && git submodule update --recursive --init'
 
 if [ "$(uname)" = "Darwin" ]; then
+    export LSCOLORS=ExfxbxdxCxegedabagacad
     alias l='ls -AFG'
     alias ll='ls -AFlhG'
     alias cloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
