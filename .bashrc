@@ -1,19 +1,13 @@
 note() {
     (
+        set -ex
         cd ~/code/sync
-        echo "==> pulling"
         git pull --rebase
         vim -c 'r!date' -c 'normal i# ' -c 'normal 2o' -c 'normal O' notes.md
-        if git diff --exit-code; then
-            echo "==> no changes"
-        else
-            echo "==> prettifying"
+        if ! git diff --exit-code; then
             prettier --write notes.md
-            echo "==> pushing"
             git commit -am "$(hostname)"
-            if git push -u origin master; then
-                echo "==> done"
-            fi
+            git push -u origin master
         fi
     )
 }
@@ -21,19 +15,15 @@ note() {
 brewsky() {
     (
         set -x
-
         brew update
         brew upgrade
         brew doctor
         brew cleanup
-
         npm update -g npm
         npm update -g
         npm doctor
-
         pip2 install --upgrade pip
         pip3 install --upgrade pip
-
         pip2 list --outdated
         pip3 list --outdated
     )
@@ -41,10 +31,10 @@ brewsky() {
 
 c() {
     (
+        set -ex
         while [ ! -d .git ]; do
             cd ..
         done
-        echo "==> generating ctags in $(pwd)"
         ctags -R .
     )
 }
