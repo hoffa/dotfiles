@@ -44,8 +44,8 @@ c() {
         while [ ! -d .git ]; do
             cd ..
         done
-        echo "😻 generating ctags in $(pwd)"
-        ctags -R
+        echo "==> generating ctags in $(pwd)"
+        ctags -R .
     )
 }
 
@@ -72,7 +72,6 @@ alias d='colordiff -u'
 alias hg='history | grep'
 alias l='ls -AF'
 alias ll='ls -AFlh'
-alias server='python -m SimpleHTTPServer 80'
 alias t='date +%s'
 
 alias g='git'
