@@ -51,7 +51,6 @@ d() {
     colordiff -u "$1" "$2" | less -rFX
 }
 
-export CLICOLOR=1
 export LSCOLORS=ExfxbxdxCxegedabagacad
 export VISUAL=vim
 export EDITOR=vim
@@ -61,15 +60,21 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias cloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias hg='history | grep'
-alias l='ls -AF'
-alias ll='ls -AFlh'
 alias t='date +%s'
 
 alias g='git'
 alias gcgrep='git rev-list --all | xargs git grep'
 alias gsubreset='git submodule foreach --recursive git checkout . && git submodule update --recursive --init'
+
+if [ "$(uname)" = "Darwin" ]; then
+    alias l='ls -AFG'
+    alias ll='ls -AFlhG'
+    alias cloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
+else
+    alias l='ls -AF --color'
+    alias ll='ls -AFlh --color'
+fi
 
 HISTTIMEFORMAT='%F %T '
 HISTSIZE=100000
