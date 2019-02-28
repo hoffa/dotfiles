@@ -63,8 +63,7 @@ alias hg='history | grep'
 alias t='date +%s'
 alias g='git'
 
-alias gcgrep='git rev-list --all | xargs git grep'
-alias gsubreset='git submodule foreach --recursive git checkout . && git submodule update --recursive --init'
+alias gitgrep='git rev-list --all | xargs git grep'
 
 if [ "$(uname)" = "Darwin" ]; then
     export LSCOLORS=ExfxbxdxCxegedabagacad
