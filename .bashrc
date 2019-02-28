@@ -59,11 +59,11 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias hg='history | grep'
+alias ha='history | grep'
 alias t='date +%s'
 alias g='git'
 
-alias gitgrep='git rev-list --all | xargs git grep'
+alias gitgrep='git rev-list --all | xargs git grep -FIin'
 
 if [ "$(uname)" = "Darwin" ]; then
     export LSCOLORS=ExfxbxdxCxegedabagacad
