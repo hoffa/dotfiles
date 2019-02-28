@@ -18,7 +18,7 @@ set ignorecase
 nnoremap <CR> :nohl<CR>
 
 set laststatus=2
-set statusline=%f\ %l/%c\ %p%%\ %m%r%<%=%y\ %{&ff}\ %{(&fenc?&fenc:&enc)}
+set statusline=%f\ %y\ %{&ff}\ %{(&fenc?&fenc:&enc)}\ %l/%c\ %p%%\ %m%r
 
 set pastetoggle=<Down>
 nnoremap <Up> :set list!<CR>
@@ -33,6 +33,8 @@ nnoremap <Leader>n :bnext<CR>
 nnoremap <Leader>p :bprev<CR>
 nnoremap <Leader>m :ls<CR>
 nnoremap <Leader>b :Ex<CR>
+nnoremap <Leader>v :vsp<CR>
+nnoremap <Leader>s :sp<CR>
 
 " https://vi.stackexchange.com/questions/454/whats-the-simplest-way-to-strip-trailing-whitespace-from-all-lines-in-a-file
 nnoremap <Leader>z :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
