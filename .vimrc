@@ -2,7 +2,6 @@
 
 set nocompatible
 set encoding=utf-8
-syntax on
 set listchars=trail:·,tab:»·,eol:¬
 set backspace=indent,eol,start
 set tags=tags;/
