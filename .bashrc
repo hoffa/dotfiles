@@ -1,6 +1,6 @@
 note() {
     (
-        set -ex
+        set -x
         cd ~/code/sync
         git pull --rebase
         vim -c 'r!date' -c 'normal i# ' -c 'normal 2o' -c 'normal O' notes.md
@@ -31,7 +31,7 @@ brewsky() {
 
 c() {
     (
-        set -ex
+        set -x
         while [ ! -d .git ]; do
             cd ..
         done
