@@ -19,7 +19,7 @@ set hlsearch
 set ignorecase
 nnoremap <CR> :nohl<CR>
 
-set statusline=%f\ %y\ %{&ff}\ %{(&fenc?&fenc:&enc)}\ %l/%c\ %p%%\ %m%r
+set statusline=%f\ %l/%c\ %p%%\ %m%r%{&ff}\ %{(&fenc?&fenc:&enc)}\ %y
 
 nnoremap <Up> :set list!<CR>
 nnoremap <Left> :set nu!<CR>
