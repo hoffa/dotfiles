@@ -6,6 +6,7 @@ set listchars=trail:·,tab:»·,eol:¬
 set backspace=indent,eol,start
 set tags=tags;/
 set path+=**
+set wildmenu
 set pastetoggle=<F2>
 let mapleader=" "
 
