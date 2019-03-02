@@ -5,6 +5,7 @@ set encoding=utf-8
 set listchars=trail:·,tab:»·,eol:¬
 set backspace=indent,eol,start
 set tags=tags;/
+set path+=**
 set pastetoggle=<F2>
 let mapleader=" "
 
@@ -18,7 +19,6 @@ set hlsearch
 set ignorecase
 nnoremap <CR> :nohl<CR>
 
-set laststatus=2
 set statusline=%f\ %y\ %{&ff}\ %{(&fenc?&fenc:&enc)}\ %l/%c\ %p%%\ %m%r
 
 nnoremap <Up> :set list!<CR>
