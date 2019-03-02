@@ -5,6 +5,7 @@ set encoding=utf-8
 set listchars=trail:·,tab:»·,eol:¬
 set backspace=indent,eol,start
 set tags=tags;/
+set pastetoggle=<F2>
 let mapleader=" "
 
 filetype plugin indent on
@@ -20,10 +21,10 @@ nnoremap <CR> :nohl<CR>
 set laststatus=2
 set statusline=%f\ %y\ %{&ff}\ %{(&fenc?&fenc:&enc)}\ %l/%c\ %p%%\ %m%r
 
-set pastetoggle=<Down>
 nnoremap <Up> :set list!<CR>
 nnoremap <Left> :set nu!<CR>
 nnoremap <Right> :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax on <Bar> endif<CR>
+nnoremap <Down> :if &laststatus == 1 <Bar> set laststatus=2 <Bar> else <Bar> set laststatus=1 <Bar> endif<CR>
 
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>x :q!<CR>
