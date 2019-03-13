@@ -7,6 +7,7 @@ set path+=**
 set wildmenu
 set pastetoggle=<F2>
 let mapleader=" "
+syntax off
 
 filetype plugin indent on
 set expandtab
