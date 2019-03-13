@@ -2,6 +2,9 @@
     name = Chris Rehn
     email = crehn@outlook.com
 
+[core]
+    excludesfile = ~/.gitignore_global
+
 [diff]
     tool = vimdiff
 
