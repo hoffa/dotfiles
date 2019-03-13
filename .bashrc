@@ -1,11 +1,13 @@
 note() {
     (
-        set -x
+        set -ex
         cd ~/code/sync
         git pull --rebase
         vim -c 'r!date' -c 'normal i# ' -c 'normal 2o' -c 'normal O' notes.md
         if ! git diff --exit-code; then
-            prettier --write notes.md
+            if command -v prettier; then
+                prettier --write notes.md
+            fi
             git commit -am "$(hostname)"
             git push -u origin master
         fi
@@ -14,7 +16,7 @@ note() {
 
 brewsky() {
     (
-        set -x
+        set -ex
         brew update
         brew upgrade
         brew doctor
@@ -31,7 +33,7 @@ brewsky() {
 
 c() {
     (
-        set -x
+        set -ex
         while [ ! -d .git ]; do
             cd ..
         done
@@ -48,7 +50,11 @@ a() {
 }
 
 d() {
-    colordiff -u "$1" "$2" | less -RFX
+    if command -v colordiff; then
+        colordiff -u "$@"
+    else
+        diff -u "$@"
+    fi
 }
 
 export VISUAL=vi
@@ -69,8 +75,8 @@ export LSCOLORS=ExfxbxdxCxegedabagacad
 export LS_COLORS='di=1;34:ln=35:so=31:pi=33:ex=1;32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
 
 if [ "$(uname)" = "Darwin" ]; then
-    alias l='ls -AFG'
-    alias ll='ls -AFlhG'
+    alias l='ls -AF -G'
+    alias ll='ls -AFlh -G'
     alias cloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 else
     alias l='ls -AF --color'
@@ -78,8 +84,8 @@ else
 fi
 
 HISTTIMEFORMAT='%F %T '
-HISTSIZE=100000
 HISTFILESIZE=100000
+HISTSIZE=100000
 shopt -s histappend
 
 PROMPT_COMMAND='rc=$?; [ $rc -ne 0 ] && printf "\e[31mexit: $rc\e[0m\n"'
