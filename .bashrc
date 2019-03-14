@@ -69,7 +69,7 @@ alias ha='history | grep'
 alias t='date +%s'
 alias g='git'
 
-alias sshhosts='grep -w Host ~/.ssh/config'
+alias sshhosts='grep -w Host ~/.ssh/config | cut -d" " -f2- | tr " " "\n" | sort | grep -Fv \*'
 alias gitgrep='git rev-list --all | xargs git grep -FIin'
 
 export LSCOLORS=ExfxbxdxCxegedabagacad
