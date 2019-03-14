@@ -5,9 +5,7 @@ note() {
         git pull --rebase
         vim -c 'r!date' -c 'normal i# ' -c 'normal 2o' -c 'normal O' notes.md
         if ! git diff --exit-code; then
-            if command -v prettier; then
-                prettier --write notes.md
-            fi
+            prettier --write notes.md
             git commit -am "$(hostname)"
             git push -u origin master
         fi
@@ -50,11 +48,7 @@ a() {
 }
 
 d() {
-    if command -v colordiff; then
-        colordiff -u "$@"
-    else
-        diff -u "$@"
-    fi
+    colordiff -u "$@"
 }
 
 export VISUAL=vi
