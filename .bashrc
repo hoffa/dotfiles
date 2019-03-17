@@ -17,8 +17,8 @@ brewsky() {
         set -ex
         brew update
         brew upgrade
-        brew doctor
         brew cleanup
+        brew doctor
         npm update -g npm
         npm update -g
         npm doctor
