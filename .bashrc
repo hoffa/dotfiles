@@ -51,6 +51,11 @@ d() {
     colordiff -u "$@"
 }
 
+remtrail() {
+    sed -i.bak 's/[[:space:]]*$//' "$1"
+    rm "$1.bak"
+}
+
 export VISUAL=vi
 export EDITOR=vi
 
