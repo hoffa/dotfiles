@@ -1,6 +1,6 @@
 set nocompatible
 set encoding=utf-8
-set listchars=trail:·,tab:»·,eol:¬
+set listchars+=trail:_,tab:>-
 set backspace=indent,eol,start
 set tags=tags;/
 set path+=**
@@ -33,6 +33,3 @@ nnoremap <Leader><Space> <C-w>w
 nnoremap <Leader>n :bnext<CR>
 nnoremap <Leader>p :bprev<CR>
 nnoremap <Leader>m :ls<CR>
-
-" https://vi.stackexchange.com/questions/454/whats-the-simplest-way-to-strip-trailing-whitespace-from-all-lines-in-a-file
-nnoremap <Leader>z :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
