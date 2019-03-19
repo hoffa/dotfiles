@@ -1,7 +1,7 @@
 set nocompatible
 set encoding=utf-8
 set listchars+=trail:_,tab:>-
-set backspace=indent,eol,start
+set backspace=2
 set pastetoggle=<F2>
 let mapleader=" "
 syntax off
@@ -16,7 +16,7 @@ set hlsearch
 set ignorecase
 nnoremap <CR> :nohl<CR>
 
-set statusline=%f\ %l/%c\ %p%%\ %m%r%{&ff}\ %{(&fenc?&fenc:&enc)}\ %y
+set statusline=%f\ %l/%c\ %m%r%{&ff}\ %{(&fenc?&fenc:&enc)}\ %y
 
 nnoremap <Up> :set list!<CR>
 nnoremap <Left> :set nu!<CR>
