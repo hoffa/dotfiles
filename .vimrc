@@ -2,7 +2,6 @@ set nocompatible
 set encoding=utf-8
 set listchars+=trail:_,tab:>-
 set backspace=indent,eol,start
-set tags=tags;/
 set path+=**
 set wildmenu
 set pastetoggle=<F2>

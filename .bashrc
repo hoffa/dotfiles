@@ -29,16 +29,6 @@ brewsky() {
     )
 }
 
-c() {
-    (
-        set -ex
-        while [ ! -d .git ]; do
-            cd ..
-        done
-        ctags -R .
-    )
-}
-
 f() {
     find . -iname "*$1*"
 }
