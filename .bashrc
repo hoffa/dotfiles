@@ -48,6 +48,8 @@ remtrail() {
 
 export VISUAL=vi
 export EDITOR=vi
+export LSCOLORS=ExfxbxdxCxegedabagacad
+export LS_COLORS='di=1;34:ln=35:so=31:pi=33:ex=1;32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -60,9 +62,6 @@ alias g='git'
 
 alias sshhosts='grep -w Host ~/.ssh/config | cut -d" " -f2- | tr " " "\n" | sort | grep -Fv \*'
 alias gitgrep='git rev-list --all | xargs git grep -FIin'
-
-export LSCOLORS=ExfxbxdxCxegedabagacad
-export LS_COLORS='di=1;34:ln=35:so=31:pi=33:ex=1;32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
 
 if [ "$(uname)" = "Darwin" ]; then
     alias l='ls -AF -G'
