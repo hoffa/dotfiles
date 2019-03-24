@@ -1,32 +1,32 @@
-set nocompatible
-set encoding=utf-8
-set listchars+=trail:_,tab:>-
-set backspace=2
-set pastetoggle=<F2>
+se nocp
+se enc=utf-8
+se lcs+=trail:_,tab:>-
+se bs=2
+se pt=<F2>
 let mapleader=" "
-syntax off
+sy off
 
-filetype plugin indent on
-set expandtab
-set shiftwidth=4
-set softtabstop=4
+filet plugin indent on
+se et
+se sw=4
+se sts=4
 
-set incsearch
-set hlsearch
-set ignorecase
-nnoremap <CR> :nohl<CR>
+se is
+se hls
+se ic
+nn <CR> :nohl<CR>
 
-set statusline=%f\ %l/%c\ %m%r%{&ff}\ %{(&fenc?&fenc:&enc)}\ %y
+se stl=%f\ %l/%c\ %m%r%{&ff}\ %{(&fenc?&fenc:&enc)}\ %y
 
-nnoremap <Up> :set list!<CR>
-nnoremap <Left> :set nu!<CR>
-nnoremap <Right> :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar> syntax on <Bar> endif<CR>
-nnoremap <Down> :if &laststatus == 1 <Bar> set laststatus=2 <Bar> else <Bar> set laststatus=1 <Bar> endif<CR>
+nn <Up> :se list!<CR>
+nn <Left> :se nu!<CR>
+nn <Right> :if exists("g:syntax_on") <Bar> sy off <Bar> else <Bar> sy on <Bar> endif<CR>
+nn <Down> :if &ls == 1 <Bar> set ls=2 <Bar> else <Bar> set ls=1 <Bar> endif<CR>
 
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>x :q!<CR>
-nnoremap <Leader>w :w!<CR>
-nnoremap <Leader><Space> <C-w>w
-nnoremap <Leader>n :bnext<CR>
-nnoremap <Leader>p :bprev<CR>
-nnoremap <Leader>m :ls<CR>
+nn <Leader>q :q<CR>
+nn <Leader>x :q!<CR>
+nn <Leader>w :w!<CR>
+nn <Leader><Space> <C-w>w
+nn <Leader>n :bn<CR>
+nn <Leader>p :bp<CR>
+nn <Leader>m :ls<CR>
