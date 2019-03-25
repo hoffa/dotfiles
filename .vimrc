@@ -17,7 +17,7 @@ se ic
 
 se stl=%f\ %l/%c\ %m%r%{&ff}\ %{(&fenc?&fenc:&enc)}\ %y
 
-nn <CR> :nohl<CR>
+nn <CR> :noh<CR>
 nn <Up> :se list!<CR>
 nn <Left> :se nu!<CR>
 nn <Right> :if exists("g:syntax_on") <Bar> sy off <Bar> else <Bar> sy on <Bar> endif<CR>
