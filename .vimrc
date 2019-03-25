@@ -6,7 +6,6 @@ se pt=<F2>
 let mapleader=" "
 sy off
 
-filet plugin indent on
 se et
 se sw=4
 se sts=4
