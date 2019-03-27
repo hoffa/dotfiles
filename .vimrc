@@ -24,9 +24,4 @@ nn <Right> :if exists("g:syntax_on") <Bar> sy off <Bar> else <Bar> sy on <Bar> e
 nn <Down> :if &ls == 1 <Bar> set ls=2 <Bar> else <Bar> set ls=1 <Bar> endif<CR>
 
 nn <Leader>q :q<CR>
-nn <Leader>x :q!<CR>
 nn <Leader>w :w!<CR>
-nn <Leader><Space> <C-w>w
-nn <Leader>n :bn<CR>
-nn <Leader>p :bp<CR>
-nn <Leader>l :ls<CR>
