@@ -17,4 +17,3 @@ se ic
 
 nn <CR> :noh<CR>
 nn <Up> :se list!<CR>
-nn <Left> :se nu!<CR>
