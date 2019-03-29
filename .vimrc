@@ -8,8 +8,8 @@ se pt=<F2>
 se ru
 
 se et
-se sw=4
-se sts=4
+se ts=4
+se sw=0
 
 se is
 se hls
