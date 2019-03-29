@@ -14,7 +14,7 @@ se is
 se hls
 se ic
 
-se stl=%f\ %l/%c\ %m%r%{&ff}\ %{(&fenc?&fenc:&enc)}\ %y
+se stl=%f\ %l/%c\ %{&ff}\ %{(&fenc?&fenc:&enc)}\ %y
 
 nn <CR> :noh<CR>
 nn <Up> :se list!<CR>
