@@ -19,4 +19,3 @@ nn <CR> :noh<CR>
 nn <Up> :se list!<CR>
 nn <Left> :se nu!<CR>
 nn <Right> :if exists("g:syntax_on") <Bar> sy off <Bar> else <Bar> sy on <Bar> endif<CR>
-nn <Down> :if &ls == 1 <Bar> set ls=2 <Bar> else <Bar> set ls=1 <Bar> endif<CR>
