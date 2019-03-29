@@ -4,7 +4,6 @@ sy off
 se enc=utf-8
 se lcs+=trail:_,tab:>-
 se bs=2
-se pt=<F2>
 se ru
 
 se et
