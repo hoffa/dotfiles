@@ -1,3 +1,4 @@
+se nocp
 se enc=utf-8
 se lcs+=trail:_,tab:>-
 se bs=2
@@ -9,6 +10,10 @@ se sw=0
 
 se is
 se hls
+
+let mapleader=" "
+nn <Leader>q :q<CR>
+nn <Leader>w :w<CR>
 
 nn <CR> :noh<CR>
 nn <Up> :se list!<CR>
