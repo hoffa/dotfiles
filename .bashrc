@@ -14,7 +14,7 @@ note() {
 
 brewsky() {
     (
-        set -ex
+        set -x
         brew update
         brew upgrade
         brew cleanup
