@@ -1,4 +1,5 @@
 se nocp
+sy off
 se enc=utf-8
 se lcs+=trail:_,tab:>-
 se bs=2
