@@ -52,7 +52,12 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias a='grep --color -FHIRin'
+if command -v rg > /dev/null; then
+    alias a='rg -Fi --hidden'
+else
+    alias a='grep -Finr'
+fi
+
 alias g='git'
 alias ha='history | grep'
 alias t='date +%s'
