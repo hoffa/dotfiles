@@ -29,9 +29,6 @@ brewsky() {
     )
 }
 
-f() {
-    find . -iname "*$1*"
-}
 
 d() {
     colordiff -u "$@"
@@ -52,6 +49,16 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+# Prefer fd
+if command -v fd > /dev/null; then
+    alias f='fd -Fi --hidden'
+else
+    f() {
+        find . -iname "*$1*"
+    }
+fi
+
+# Prefer ripgrep
 if command -v rg > /dev/null; then
     alias a='rg -Fi --hidden'
 else
