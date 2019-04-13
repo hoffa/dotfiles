@@ -66,11 +66,11 @@ else
 fi
 
 alias g='git'
-alias ha='history | grep'
+alias ha='history | a'
 alias t='date +%s'
 
 alias sshhosts='grep -w Host ~/.ssh/config | cut -d" " -f2- | tr " " "\n" | sort | grep -Fv \*'
-alias gitgrep='git rev-list --all | xargs git grep -FIin'
+alias gitgrep='git rev-list --all | xargs git grep -Fin'
 
 if [ "$(uname)" = "Darwin" ]; then
     alias l='ls -AF -G'
