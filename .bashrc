@@ -33,10 +33,6 @@ f() {
     find . -iname "*$1*"
 }
 
-a() {
-    grep --color -FHIRin "$1" .
-}
-
 d() {
     colordiff -u "$@"
 }
@@ -56,9 +52,10 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+alias a='grep --color -FHIRin'
+alias g='git'
 alias ha='history | grep'
 alias t='date +%s'
-alias g='git'
 
 alias sshhosts='grep -w Host ~/.ssh/config | cut -d" " -f2- | tr " " "\n" | sort | grep -Fv \*'
 alias gitgrep='git rev-list --all | xargs git grep -FIin'
