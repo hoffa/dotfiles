@@ -29,11 +29,6 @@ brewsky() {
     )
 }
 
-
-d() {
-    colordiff -u "$@"
-}
-
 remtrail() {
     sed -i.bak 's/[[:space:]]*$//' "$1"
     rm "$1.bak"
@@ -49,13 +44,18 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+# Prefer colordiff
+if command -v colordiff > /dev/null; then
+    d() { colordiff -u "$@"; }
+else
+    d() { diff -u "$@"; }
+fi
+
 # Prefer fd
 if command -v fd > /dev/null; then
     alias f='fd -Fi --hidden'
 else
-    f() {
-        find . -iname "*$1*"
-    }
+    f() { find . -iname "*$1*"; }
 fi
 
 # Prefer ripgrep
