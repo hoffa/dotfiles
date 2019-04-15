@@ -46,9 +46,9 @@ alias .....='cd ../../../..'
 
 # Prefer colordiff
 if command -v colordiff > /dev/null; then
-    d() { colordiff -u "$@"; }
+    alias d='colordiff -u'
 else
-    d() { diff -u "$@"; }
+    alias d='diff -u'
 fi
 
 # Prefer fd
