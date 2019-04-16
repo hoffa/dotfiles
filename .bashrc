@@ -34,6 +34,7 @@ remtrail() {
 
 export VISUAL=vi
 export EDITOR=vi
+export CLICOLOR=1
 export LSCOLORS=ExfxbxdxCxegedabagacad
 export LS_COLORS='di=1;34:ln=35:so=31:pi=33:ex=1;32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
 
@@ -71,8 +72,8 @@ alias sshhosts='grep -w Host ~/.ssh/config | cut -d" " -f2- | tr " " "\n" | sort
 alias gitgrep='git rev-list --all | xargs git grep -Fin'
 
 if [ "$(uname)" = "Darwin" ]; then
-    alias l='ls -AF -G'
-    alias ll='ls -AFlh -G'
+    alias l='ls -AF'
+    alias ll='ls -AFlh'
     alias cloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 else
     alias l='ls -AF --color'
