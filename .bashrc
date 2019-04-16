@@ -74,7 +74,6 @@ alias gitgrep='git rev-list --all | xargs git grep -Fin'
 if [ "$(uname)" = "Darwin" ]; then
     alias l='ls -AF'
     alias ll='ls -AFlh'
-    alias cloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 else
     alias l='ls -AF --color'
     alias ll='ls -AFlh --color'
