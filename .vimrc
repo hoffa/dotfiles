@@ -1,5 +1,3 @@
-se nocp
-sy off
 se enc=utf-8
 se lcs+=space:.,tab:+-
 se bs=2
