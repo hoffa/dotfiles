@@ -1,8 +1,4 @@
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-export PATH=$PATH:$HOME/go/bin
-export PATH=$PATH:/usr/local/sbin # Homebrew
+export PATH=$PATH:~/go/bin:/usr/local/sbin
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 [ -f ~/.bashrc ] && . ~/.bashrc

@@ -1,3 +1,13 @@
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+export VISUAL=vi
+export EDITOR=vi
+
+export CLICOLOR=1
+export LSCOLORS=ExfxbxdxCxegedabagacad
+export LS_COLORS='di=1;34:ln=35:so=31:pi=33:ex=1;32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
+
 note() {
     (
         set -ex
@@ -26,17 +36,6 @@ brewsky() {
         pip3 list --outdated
     )
 }
-
-remtrail() {
-    sed -i.bak 's/[[:space:]]*$//' "$1"
-    rm "$1.bak"
-}
-
-export VISUAL=vi
-export EDITOR=vi
-export CLICOLOR=1
-export LSCOLORS=ExfxbxdxCxegedabagacad
-export LS_COLORS='di=1;34:ln=35:so=31:pi=33:ex=1;32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
 
 alias ..='cd ..'
 alias ...='cd ../..'
