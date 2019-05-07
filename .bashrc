@@ -70,6 +70,7 @@ alias t='date +%s'
 
 alias sshhosts='grep -w Host ~/.ssh/config | cut -d" " -f2- | tr " " "\n" | sort | grep -Fv \*'
 alias gitgrep='git rev-list --all | xargs git grep -Fin'
+alias myip='curl ip-api.com/json'
 
 if [ "$(uname)" = "Darwin" ]; then
     alias l='ls -AF -G'
