@@ -1,5 +1,5 @@
 se enc=utf-8
-se lcs+=space:.,tab:+-
+se lcs=eol:$,trail:.,tab:+-
 se bs=2
 se ru
 se et
