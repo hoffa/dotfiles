@@ -49,7 +49,7 @@ fi
 if command -v fd > /dev/null; then
     alias f='fd -Fi --hidden'
 else
-    f() { find . -iname "*$1*"; }
+    function f { find . -iname "*$1*"; }
 fi
 
 # Prefer ripgrep
@@ -73,10 +73,10 @@ alias gitgrep='git rev-list --all | xargs git grep -Fin'
 alias myip='curl -sSL ip-api.com/json'
 
 if [ "$(uname)" = "Darwin" ]; then
-    alias l='ls -AF -G'
+    alias l='ls -A -G'
     alias ll='ls -AFlh -G'
 else
-    alias l='ls -AF --color'
+    alias l='ls -A --color'
     alias ll='ls -AFlh --color'
 fi
 
