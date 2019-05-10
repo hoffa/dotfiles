@@ -65,12 +65,10 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 alias g='git'
+alias ga='git rev-list --all | xargs git grep -Fin'
 alias ha='history | a'
+alias sshhosts='grep -w Host ~/.ssh/config | tr " " "\n" | grep -Ev "(\*|Host)" | sort'
 alias t='date +%s'
-
-alias sshhosts='grep -w Host ~/.ssh/config | cut -d" " -f2- | tr " " "\n" | sort | grep -Fv \*'
-alias gitgrep='git rev-list --all | xargs git grep -Fin'
-alias myip='curl -sSL ip-api.com/json'
 
 if [ "$(uname)" = "Darwin" ]; then
     alias l='ls -A -G'
@@ -85,5 +83,5 @@ HISTFILESIZE=100000
 HISTSIZE=100000
 shopt -s histappend
 
-PROMPT_COMMAND='rc=$?; [ $rc -ne 0 ] && printf "\e[31mexit: $rc\e[0m\n"'
+PROMPT_COMMAND='r=$?; [ $r -ne 0 ] && printf "\e[31mexit: $r\e[0m\n"'
 PS1='\u@\h \w $(git rev-parse --abbrev-ref HEAD 2> /dev/null)\n\$ '
