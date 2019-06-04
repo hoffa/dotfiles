@@ -63,9 +63,7 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 alias g='git'
-alias ga='git rev-list --all | xargs git grep -Fin'
 alias ha='history | a'
-alias sshhosts='grep -w Host ~/.ssh/config | tr " " "\n" | grep -Ev "(\*|Host)" | sort'
 alias t='date +%s'
 
 if [ "$(uname)" = "Darwin" ]; then
