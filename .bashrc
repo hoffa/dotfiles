@@ -7,33 +7,15 @@ export EDITOR=vi
 export LSCOLORS=ExfxbxdxCxegedabagacad
 export LS_COLORS='di=1;34:ln=35:so=31:pi=33:ex=1;32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
 
-note() {
-    (
-        set -ex
-        cd ~/code/sync
-        git pull --rebase
-        vim -c 'r!date' -c 'normal i# ' -c 'normal 2o' -c 'normal O' notes.md
-        if ! git diff --exit-code; then
-            prettier --write notes.md
-            git commit -am "$(hostname)"
-            git push -u origin master
-        fi
-    )
-}
-
 brewsky() {
-    (
-        set -x
-        brew update
-        brew upgrade
-        brew cleanup
-        brew doctor
-        npm update -g npm
-        npm update -g
-        npm doctor
-        pip2 list --outdated
-        pip3 list --outdated
-    )
+    brew upgrade
+    brew doctor
+
+    npm update -g
+    npm doctor
+
+    pip2 list --outdated
+    pip3 list --outdated
 }
 
 # Prefer colordiff
