@@ -20,14 +20,32 @@ brewsky() {
     pip3 list --outdated
 }
 
+# Prefer colordiff
+if command -v colordiff > /dev/null; then
+    alias d='colordiff -u'
+else
+    alias d='diff -u'
+fi
+
+# Prefer fd
+if command -v fd > /dev/null; then
+    alias f='fd -Fi --hidden'
+else
+    f() { find . -iname "*$1*"; }
+fi
+
+# Prefer ripgrep
+if command -v rg > /dev/null; then
+    alias a='rg -Fi --hidden'
+else
+    alias a='grep -Finr'
+fi
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias a='rg -Fi --hidden'
-alias d='colordiff -u'
-alias f='fd -Fi --hidden'
 alias g='git'
 alias ha='history | a'
 alias l='ls -A'
