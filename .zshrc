@@ -1,4 +1,5 @@
-export PATH=$PATH:~/go/bin:/usr/local/sbin
+path+=~/go/bin
+path+=/usr/local/sbin
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
