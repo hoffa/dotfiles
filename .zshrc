@@ -48,7 +48,7 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 alias g='git'
-alias ha='history | a'
+alias ha='history -E 0 | a'
 alias l='ls -A'
 alias ll='ls -AFlh'
 alias t='date +%s'
