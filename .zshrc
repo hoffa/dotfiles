@@ -27,18 +27,14 @@ command_exists() {
     command -v "$@" > /dev/null
 }
 
+f() {
+    find . -iname "*$1*"
+}
+
 if command_exists colordiff; then
     alias d='colordiff -u'
 else
     alias d='diff -u'
-fi
-
-if command_exists fd; then
-    alias f='fd -Fi --hidden'
-else
-    f() {
-        find . -iname "*$1*"
-    }
 fi
 
 if command_exists rg; then
