@@ -13,7 +13,5 @@ se is
 se hls
 nn <CR> :noh<CR>
 
-nn <Up> :se list!<CR>
-nn <Down> :q<CR>
 nn <Left> :se nu!<CR>
-nn <Right> :if exists("g:syntax_on") <Bar> sy off <Bar> else <Bar> sy on <Bar> endif<CR>
+nn <Right> :se list!<CR>
