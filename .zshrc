@@ -8,6 +8,8 @@ export CLICOLOR=1
 export LSCOLORS=ExfxbxdxCxegedabagacad
 export LS_COLORS='di=1;34:ln=35:so=31:pi=33:ex=1;32:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
 
+export GREP_OPTIONS='--color'
+
 path+=~/go/bin
 path+=/usr/local/sbin
 
@@ -23,24 +25,18 @@ brewsky() {
     pip3 list --outdated
 }
 
-command_exists() {
-    command -v "$@" > /dev/null
+a() {
+    grep -Finr "$@" .
 }
 
 f() {
     find . -iname "*$1*"
 }
 
-if command_exists colordiff; then
+if command -v colordiff > /dev/null; then
     alias d='colordiff -u'
 else
     alias d='diff -u'
-fi
-
-if command_exists rg; then
-    alias a='rg -Fi --hidden'
-else
-    alias a='grep -Finr'
 fi
 
 alias ..='cd ..'
