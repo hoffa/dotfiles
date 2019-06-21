@@ -48,7 +48,6 @@ alias g='git'
 alias ha='history -E 0 | a'
 alias l='ls -A'
 alias ll='ls -AFlh'
-alias t='date +%s'
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
