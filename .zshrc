@@ -57,5 +57,5 @@ setopt PROMPT_SUBST
 setopt EXTENDED_HISTORY
 
 PROMPT='%(?..%F{red}exit: %?%f
-)%n@%m %~ $(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+)%n%F{blue}@%f%m%F{blue}:%f%~ %F{red}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%f
 %# '
