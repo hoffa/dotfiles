@@ -22,15 +22,23 @@ brewsky() {
     pip3 list --outdated
 }
 
-a() {
-    grep -Finr "$@" .
+command_exists() {
+    command -v "$@" > /dev/null
 }
 
 f() {
     find . -iname "*$1*"
 }
 
-if command -v colordiff > /dev/null; then
+if command_exists rg; then
+    alias a='rg -Fi --hidden'
+else
+    a() {
+        grep -Finr "$@" .
+    }
+fi
+
+if command_exists colordiff; then
     alias d='colordiff -u'
 else
     alias d='diff -u'
