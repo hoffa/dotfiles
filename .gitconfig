@@ -30,6 +30,4 @@
     pr = pull --rebase
     s = status
     sh = show
-    subco = submodule foreach --recursive git checkout .
-    subup = submodule update --recursive --init
     u = remote -v
