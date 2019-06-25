@@ -5,7 +5,6 @@ export VISUAL=vi
 export EDITOR=vi
 
 export CLICOLOR=1
-export GREP_OPTIONS='--color'
 
 path+=~/go/bin
 path+=/usr/local/sbin
@@ -22,15 +21,11 @@ brewsky() {
     pip3 list --outdated
 }
 
-command_exists() {
-    command -v "$@" > /dev/null
-}
-
 f() {
     find . -iname "*$1*"
 }
 
-if command_exists rg; then
+if command -v rg > /dev/null; then
     alias a='rg -Fi --hidden'
 else
     a() {
@@ -38,7 +33,7 @@ else
     }
 fi
 
-if command_exists colordiff; then
+if command -v colordiff > /dev/null; then
     alias d='colordiff -u'
 else
     alias d='diff -u'
