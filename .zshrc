@@ -13,6 +13,7 @@ bindkey -e
 
 brewsky() {
     brew upgrade
+    brew cask upgrade
     brew doctor
 
     npm update -g
@@ -45,15 +46,14 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 alias g='git'
-alias ha='history -E 0 | a'
 alias l='ls -A'
 alias ll='ls -AFlh'
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt PROMPT_SUBST
 setopt EXTENDED_HISTORY
+setopt PROMPT_SUBST
 
 PROMPT='%(?..%F{red}exit: %?%f
 )%n%F{blue}@%f%m%F{blue}:%f%~ %F{red}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%f
