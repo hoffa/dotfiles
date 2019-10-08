@@ -7,7 +7,6 @@ export EDITOR=vi
 export CLICOLOR=1
 
 path+=~/go/bin
-path+=/usr/local/sbin
 
 bindkey -e
 
