@@ -1,5 +1,3 @@
-tap "homebrew/bundle"
-tap "homebrew/core"
 brew "ascii"
 brew "awscli"
 brew "bat"
