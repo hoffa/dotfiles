@@ -13,6 +13,7 @@ bindkey -e
 brewsky() {
     brew upgrade
     brew cask upgrade
+    brew cleanup
     brew doctor
 
     npm update -g
