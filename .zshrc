@@ -22,32 +22,18 @@ brewsky() {
     pip3 list --outdated
 }
 
-f() {
-    find . -iname "*$1*"
-}
+f() { find . -iname "*$1*" }
+a() { grep -Finr "$@" . }
 
-if command -v rg > /dev/null; then
-    alias a='rg -Fi --hidden'
-else
-    a() {
-        grep -Finr "$@" .
-    }
-fi
-
-if command -v colordiff > /dev/null; then
-    alias d='colordiff -u'
-else
-    alias d='diff -u'
-fi
+alias d='diff -u'
+alias g='git'
+alias l='ls -A'
+alias ll='ls -AFlh'
 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-
-alias g='git'
-alias l='ls -A'
-alias ll='ls -AFlh'
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
