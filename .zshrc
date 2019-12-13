@@ -22,8 +22,8 @@ brewsky() {
     pip3 list --outdated
 }
 
-f() { find . -iname "*$1*" }
-a() { grep -Finr "$@" . }
+f() { find . -iname "*$1*"; }
+a() { grep -Finr "$@" .; }
 
 alias d='diff -u'
 alias g='git'
