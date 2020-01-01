@@ -12,15 +12,10 @@ brewsky() {
 f() { find . -iname "*$1*"; }
 a() { grep -Finr "$@" .; }
 
-if [ "$(uname)" = Linux ]; then
-    alias l='ls -A --color'
-    alias ll='l -Flh'
-else
-    alias l='ls -A'
-    alias ll='l -Flh'
-fi
 alias d='diff -u'
 alias g='git'
+alias l='ls -A'
+alias ll='ls -AFlh'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
