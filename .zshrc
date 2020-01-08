@@ -10,7 +10,12 @@ brewsky() {
 }
 
 f() { find . -iname "*$1*"; }
-a() { grep -Finr "$@" .; }
+
+if command -v rg > /dev/null; then
+    alias a='rg -Fi'
+else
+    a() { grep -Finr "$@" .; }
+fi
 
 alias d='diff -u'
 alias g='git'
