@@ -35,5 +35,5 @@ bindkey -e
 path+=~/go/bin
 
 PROMPT='%(?..%F{red}exit: %?%f
-)%n@%m:%~ %F{red}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%f
+)%n@%m:%~ %F{magenta}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%f
 %F{green}%#%f '
