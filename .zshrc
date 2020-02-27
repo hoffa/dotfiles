@@ -9,7 +9,7 @@ brewsky() {
     npm doctor
 }
 
-f() { find . -iname "*$1*"; }
+f() { find -L . -iname "*$1*"; }
 
 if command -v rg > /dev/null; then
     alias a='rg -Fi'
