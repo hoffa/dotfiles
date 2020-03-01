@@ -27,8 +27,8 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 setopt EXTENDED_HISTORY
 setopt PROMPT_SUBST
 bindkey -e
