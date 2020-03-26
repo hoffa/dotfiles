@@ -1,5 +1,6 @@
 sy on
 
+se bg=light
 se enc=utf-8
 se lcs=eol:$,trail:.,tab:+-
 se bs=2
