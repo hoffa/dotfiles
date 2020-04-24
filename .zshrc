@@ -10,6 +10,7 @@ brewsky() {
 }
 
 f() { find -L . -iname "*$1*"; }
+alias fx='whence -pm \* | xargs -L 1 basename | grep -Fi'
 
 if command -v rg > /dev/null; then
     alias a='rg -Fi'
