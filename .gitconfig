@@ -28,3 +28,6 @@
     s = status
     sh = show
     u = remote -v
+
+[pull]
+	rebase = true
