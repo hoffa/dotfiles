@@ -1,26 +1,26 @@
 export CLICOLOR=1
 
 brewsky() {
-    brew upgrade
-    brew cask upgrade
-    brew cleanup
-    brew doctor
-    npm update -g
-    npm doctor
+	brew upgrade
+	brew cask upgrade
+	brew cleanup
+	brew doctor
+	npm update -g
+	npm doctor
 }
 
 alias fx='whence -pm \* | xargs -L 1 basename | grep -Fi'
 
-if command -v fd > /dev/null; then
-    alias f='fd -HIL'
+if command -v fd >/dev/null; then
+	alias f='fd -HIL'
 else
-    f() { find -L . -iname "*$1*"; }
+	f() { find -L . -iname "*$1*"; }
 fi
 
-if command -v rg > /dev/null; then
-    alias a='rg -Fi'
+if command -v rg >/dev/null; then
+	alias a='rg -Fi'
 else
-    a() { grep -Finr "$@" .; }
+	a() { grep -Finr "$@" .; }
 fi
 
 alias d='diff -u'
