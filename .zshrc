@@ -9,8 +9,13 @@ brewsky() {
     npm doctor
 }
 
-f() { find -L . -iname "*$1*"; }
 alias fx='whence -pm \* | xargs -L 1 basename | grep -Fi'
+
+if command -v fd > /dev/null; then
+    alias f='fd -HIL'
+else
+    f() { find -L . -iname "*$1*"; }
+fi
 
 if command -v rg > /dev/null; then
     alias a='rg -Fi'
