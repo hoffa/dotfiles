@@ -42,5 +42,5 @@ path+=~/go/bin
 path+=/usr/local/sbin
 
 PROMPT='%(?..%F{red}exit: %?%f
-)%n%F{green}%B@%b%f%m%F{green}%B:%b%f%~ %F{magenta}%B$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%b%f
+)%n%F{green}%B@%b%f%m%F{green}%B:%b%f%~ %F{red}%B$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%b%f
 %F{green}%B❯%b%f '
