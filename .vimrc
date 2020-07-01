@@ -12,8 +12,6 @@ se sw=0
 
 se autoread
 au BufWritePost *.go silent! !gofmt -w %
-au BufWritePost *.sh silent! !shfmt -w %
-au BufWritePost *.py silent! !black -q %
 
 se is
 se hls
