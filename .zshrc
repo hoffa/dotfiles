@@ -23,10 +23,16 @@ else
 	a() { grep -Finr "$@" .; }
 fi
 
+if command -v exa >/dev/null; then
+	alias l='exa -a'
+	alias ll='exa -agl --time-style=long-iso'
+else
+	alias l='ls -a'
+	alias ll='ls -alF'
+fi
+
 alias d='diff -u'
 alias g='git'
-alias l='ls -A'
-alias ll='ls -AFlh'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
