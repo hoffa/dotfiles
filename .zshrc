@@ -31,7 +31,12 @@ else
 	alias ll='ls -alF'
 fi
 
-alias d='diff -u'
+if command -v colordiff >/dev/null; then
+	alias d='colordiff -u'
+else
+	alias d='diff -u'
+fi
+
 alias g='git'
 alias ..='cd ..'
 alias ...='cd ../..'
