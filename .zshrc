@@ -18,7 +18,7 @@ else
 fi
 
 if command -v rg >/dev/null; then
-	alias a='rg -Fi'
+	alias a='rg -Fi --hidden'
 else
 	a() { grep -Finr "$@" .; }
 fi
