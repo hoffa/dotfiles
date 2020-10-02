@@ -50,7 +50,6 @@ setopt EXTENDED_HISTORY
 setopt PROMPT_SUBST
 bindkey -e
 path+=~/go/bin
-path+=/usr/local/sbin
 
 PROMPT='%(?..%F{red}%Bexit: %?%b%f
 )%n%F{green}%B@%b%f%m%F{green}%B:%b%f%~ %F{red}%B$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%b%f
