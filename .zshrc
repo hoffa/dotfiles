@@ -1,5 +1,3 @@
-export CLICOLOR=1
-
 brewsky() {
 	brew upgrade
 	brew upgrade --cask
