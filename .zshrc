@@ -1,3 +1,5 @@
+export CLICOLOR=1
+
 brewsky() {
 	brew upgrade
 	brew upgrade --cask
@@ -9,24 +11,12 @@ brewsky() {
 
 alias fx='whence -pm \* | xargs -L 1 basename | grep -Fi'
 
-if command -v fd >/dev/null; then
-	alias f='fd -HIL'
-else
-	f() { find -L . -iname "*$1*"; }
-fi
+f() { find -L . -iname "*$1*"; }
 
 if command -v rg >/dev/null; then
 	alias a='rg -Fi --hidden'
 else
 	a() { grep -Finr "$@" .; }
-fi
-
-if command -v exa >/dev/null; then
-	alias l='exa -a'
-	alias ll='exa -agl --time-style=long-iso'
-else
-	alias l='ls -a'
-	alias ll='ls -alF'
 fi
 
 if command -v colordiff >/dev/null; then
@@ -36,6 +26,9 @@ else
 fi
 
 alias g='git'
+alias l='ls -a'
+alias ll='ls -alF'
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
