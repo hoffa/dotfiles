@@ -19,12 +19,8 @@ else
 	a() { grep -Finr "$@" .; }
 fi
 
-if command -v colordiff >/dev/null; then
-	alias d='colordiff -u'
-else
-	alias d='diff -u'
-fi
 
+alias d='diff -u'
 alias g='git'
 alias l='ls -a'
 alias ll='ls -alF'
