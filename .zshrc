@@ -11,14 +11,8 @@ brewsky() {
 
 alias fx='whence -pm \* | xargs -L 1 basename | grep -Fi'
 
+a() { grep -Finr "$@" .; }
 f() { find -L . -iname "*$1*"; }
-
-if command -v rg >/dev/null; then
-	alias a='rg -Fi --hidden'
-else
-	a() { grep -Finr "$@" .; }
-fi
-
 
 alias d='diff -u'
 alias g='git'
