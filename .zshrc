@@ -9,10 +9,6 @@ brewsky() {
 
 alias fx='whence -pm \* | xargs -L 1 basename | grep -Fi'
 
-a() { grep -Finr "$@" .; }
-f() { find -L . -iname "*$1*"; }
-cl() { cd "$@" && ll; }
-
 alias d='diff -u'
 alias g='git'
 alias l='ls -a'
@@ -22,6 +18,10 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
+
+a() { grep -Finr "$@" .; }
+f() { find -L . -iname "*$1*"; }
+c() { cd "$@" && ll; }
 
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
