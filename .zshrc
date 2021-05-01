@@ -10,7 +10,6 @@ alias d='diff -u'
 alias g='git'
 alias l='ls -a'
 alias ll='ls -al'
-
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
