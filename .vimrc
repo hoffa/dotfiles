@@ -1,6 +1,5 @@
 sy on
 
-se enc=utf-8
 se lcs=eol:$,trail:.,tab:+-
 se bs=2
 se ru
@@ -11,7 +10,7 @@ se sw=0
 
 se is
 se hls
-nn <CR> :noh<CR>
 
+nn <CR> :noh<CR>
 nn <Left> :se nu!<CR>
 nn <Right> :se list!<CR>
