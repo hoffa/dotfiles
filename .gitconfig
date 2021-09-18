@@ -2,27 +2,16 @@
     name = Chris Rehn
     email = crehn@outlook.com
 
-[diff]
-    tool = vimdiff
-
-[merge]
-    tool = vimdiff
-
-[difftool]
-    prompt = false
-
 [alias]
     a = add
-    c = commit
     cm = commit -m
     d = diff
     ds = diff --staged
     l = log --graph --all --pretty=format:'%C(auto)%h%C(reset) %C(blue)(%cr)%C(reset)%C(auto)%d%C(reset) %s %C(green)<%an>%C(reset)'
     poh = push -u origin HEAD
-    p = pull
     s = status
     sh = show
     u = remote -v
 
 [pull]
-	rebase = true
+    rebase = true
