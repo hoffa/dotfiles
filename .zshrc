@@ -1,9 +1,3 @@
-brewsky() {
-	brew upgrade
-	brew upgrade --cask
-	brew doctor
-}
-
 alias d='diff -u'
 alias g='git'
 alias l='ls -a'
@@ -22,5 +16,3 @@ SAVEHIST=100000
 PROMPT='%(?..%F{red}%Bexit: %?%b%f
 )%B%F{blue}%~ %#%f%b '
 RPROMPT='%B%F{red}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%f%b'
-
-export CLICOLOR=1
