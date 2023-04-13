@@ -8,7 +8,6 @@
     d = diff
     ds = diff --staged
     l = log --graph --all --pretty=format:'%C(auto)%h%C(reset) %C(blue)(%cr)%C(reset)%C(auto)%d%C(reset) %s %C(green)<%an>%C(reset)'
-    poh = push -u origin HEAD
     s = status
     sh = show
     u = remote -v
