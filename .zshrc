@@ -6,9 +6,7 @@ brewsky() {
     brew upgrade
     brew doctor
 }
-if [ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-    source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Go
 export PATH=$HOME/go/bin:$PATH
@@ -24,20 +22,8 @@ alias ll='ls -al'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-
-# Search file contents
-if command -v rg > /dev/null; then
-    alias a='rg -F -i -uuu'
-else
-    a() { grep -Finr "$@" .; }
-fi
-
-# Find file
-if command -v fd > /dev/null; then
-    alias f='fd --fixed-strings --unrestricted'
-else
-    f() { find -L . -iname "*$1*"; }
-fi
+alias a='rg -F -i -uuu'
+alias f='fd --fixed-strings --unrestricted'
 
 # History
 HISTFILE=~/.zsh_history
