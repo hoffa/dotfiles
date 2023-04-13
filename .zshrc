@@ -1,5 +1,14 @@
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
+
 export CLICOLOR=1
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
+
+brewsky() {
+    brew update
+    brew upgrade
+    brew doctor
+}
 
 alias d='diff -u'
 alias g='git'
@@ -27,3 +36,7 @@ HISTSIZE=100000
 SAVEHIST=100000
 PROMPT='%B%(?..%F{red}%?%f )%F{blue}%~ %#%f%b '
 RPROMPT='%B%F{red}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%f%b'
+
+if [ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
