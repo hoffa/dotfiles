@@ -1,3 +1,5 @@
+export CLICOLOR=1
+
 alias d='diff -u'
 alias g='git'
 alias l='ls -a'
