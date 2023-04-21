@@ -21,9 +21,11 @@ alias ll='ls -al'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+
 alias d='colordiff -u'
 alias a='rg -F -i -uuu'
 alias f='fd --fixed-strings --unrestricted'
+alias c='bat --theme ansi --style plain -P'
 
 # History
 HISTFILE=~/.zsh_history
