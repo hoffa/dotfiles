@@ -6,6 +6,7 @@ brewsky() {
     brew upgrade
     brew autoremove
     brew cleanup
+    brew leaves
     brew doctor
 }
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
