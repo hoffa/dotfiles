@@ -4,6 +4,7 @@ export PATH=/opt/homebrew/sbin:$PATH
 brewsky() {
     brew update
     brew upgrade
+    brew autoremove
     brew doctor
 }
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
