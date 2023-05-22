@@ -36,5 +36,5 @@ SAVEHIST=100000
 
 # Prompt
 setopt PROMPT_SUBST
-PROMPT='%B%(?..%F{red}%?%f )%F{blue}%~ %F{yellow}%#%f%b '
+PROMPT='%B%(?..%F{red}%?%f )%F{blue}%~ %F{green}%#%f%b '
 RPROMPT='%B%F{red}$(git rev-parse --abbrev-ref HEAD 2> /dev/null) %F{yellow}%*%f%b'
