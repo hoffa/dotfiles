@@ -28,7 +28,6 @@ alias ll='ls -al -h'
 alias d='colordiff -u'
 alias a='rg -F -i -uuu'
 alias f='fd --fixed-strings --unrestricted'
-alias c='bat --theme ansi --style plain -P'
 
 # History
 HISTFILE=~/.zsh_history
