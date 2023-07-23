@@ -26,7 +26,7 @@ alias l='ls -a'
 alias ll='ls -al -h'
 alias d='colordiff -u'
 alias a='rg -F -i -uuu'
-alias f='fd --fixed-strings --unrestricted'
+alias f='fd --color never --fixed-strings --unrestricted'
 
 # History
 HISTFILE=~/.zsh_history
