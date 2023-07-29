@@ -14,16 +14,13 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Go
 export PATH=$HOME/go/bin:$PATH
 
-# Terminal colors
-export CLICOLOR=1
-
 alias g='git'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-alias l='ls -a'
-alias ll='ls -al -h'
+alias l='ls -a -G'
+alias ll='ls -al -h -G'
 alias d='colordiff -u'
 alias a='rg -F -i -uuu'
 alias f='fd --color never --fixed-strings --unrestricted'
