@@ -26,4 +26,4 @@ HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 PROMPT='%B%(?..%F{red}%?%f )%F{blue}%~ %F{green}%#%f%b '
-RPROMPT='%B%F{red}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%f%b'
+RPROMPT='%B%F{red}$(git branch --show-current 2> /dev/null)%f%b'
